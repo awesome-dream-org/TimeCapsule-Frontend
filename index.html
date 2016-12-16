@@ -1,44 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example</title>
+    <title>Testing Forms</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
   </head>
-    <!--
-    <body class="container-fluid">
-      <h1>Example</h1>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
-    -->
   <body class="container-fluid">
-    <form id="application-x-www-form-data" action="http://httpbin.org/post" method="post">
+    <button id="all-documents-button"> Get All Documents </button>
+    <form id="show-document-form" action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
       <fieldset>
-        <legend>enctype unset</legend>
+        <legend>Show Doc</legend>
         <label>
-          Title
-          <input type="text" name="document[title]">
+          ID
+          <input type="text" name="document[id]">
         </label>
-        <label>
-          Document
-          <input type="file" name="document[file]">
-        </label>
-        <input type="submit" name="submit" value="Upload">
+        <input type="submit" name="submit" value="Show">
       </fieldset>
     </form>
-    <form id="multipart-form-data" action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
+    <form id="create-document-form" action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
       <fieldset>
-        <legend>enctype="multipart/form-data"</legend>
+        <legend>Create Doc</legend>
         <label>
           Title
           <input type="text" name="document[title]">
@@ -51,7 +35,35 @@
           Document
           <input type="file" name="document[file]">
         </label>
-        <input type="submit" name="submit" value="Upload">
+        <input type="submit" name="submit" value="Create">
+      </fieldset>
+    </form>
+    <form id="update-document-form" action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Update Doc</legend>
+        <label>
+          ID
+          <input type="text" name="document[id]">
+        </label>
+        <label>
+          New Title
+          <input type="text" name="document[title]">
+        </label>
+        <label>
+          New Category
+          <input type="text" name="document[category]">
+        </label>
+        <input type="submit" name="submit" value="Update">
+      </fieldset>
+    </form>
+    <form id="delete-document-form" action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Delete Doc</legend>
+        <label>
+          ID
+          <input type="text" name="document[id]">
+        </label>
+        <input type="submit" name="submit" value="Delete">
       </fieldset>
     </form>
   </body>

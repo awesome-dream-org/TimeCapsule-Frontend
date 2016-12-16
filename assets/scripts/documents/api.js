@@ -1,14 +1,6 @@
 'use strict';
 
-const createUploadEncoded = function(data){
-  return $.ajax({
-    url: 'http://localhost:4741',
-    method: 'POST',
-    data,
-  });
-};
-
-const createUploadMultiPart = function(data){
+const createDocument = function(data){
   return $.ajax({
     url: 'http://localhost:4741/docs',
     method: 'POST',
@@ -19,6 +11,5 @@ const createUploadMultiPart = function(data){
 };
 
 module.exports = {
-  createUploadEncoded,
-  createUploadMultiPart,
+  createDocument,
 };
