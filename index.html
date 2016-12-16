@@ -28,5 +28,37 @@
         </div>
       </div>
 
+      <div class="content">
+        <h3> Sign-Up </h3>
+        <form id="sign-up" class="form-auth">
+          <label for="credentials[email]" class="sr-only">Email address</label>
+          <input type="text" name="credentials[email]" class="form-control auth-field-regular" placeholder="Email address" required="" autofocus="">
+          <label for="credentials[password]" class="sr-only">Password</label>
+          <input type="password" name="credentials[password]" class="form-control auth-field-regular" placeholder="Password" required="">
+          <label for="credentials[password_confirmation]" class="sr-only">Password</label>
+          <input type="password" id="credentials[password_confirmation]" name="credentials[password_confirmation]" class="form-control auth-field-bottom" placeholder="Password Confirmation" required="">
+          <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign Up</button>
+        </form>
+        <h3> Sign-In </h3>
+        <form id="sign-in" class="form-auth">
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="text" id="credentials[email]" name="credentials[email]" class="form-control auth-field-regular" placeholder="Email address" required="" autofocus="">
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="credentials[password]" name="credentials[password]" class="form-control auth-field-bottom" placeholder="Password" required="">
+          <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign in</button>
+        </form>
+        <h3> Change Pass </h3>
+        <form id="change-password" class="form-auth">
+          <label for="passwords[old]" class="sr-only">Current Password</label>
+          <input type="password" id="passwords[old]" name="passwords[old]" class="form-control auth-field-regular" placeholder="Current Password" required="">
+          <label for="passwords[new]" class="sr-only">New Password</label>
+          <input type="password" id="passwords[new]" name="passwords[new]" class="form-control auth-field-regular" placeholder="New Password" required="">
+          <label for="credentials[password_confirmation]" class="sr-only">Confirm New Password</label>
+          <input type="password" id="passwords[password_confirmation]" name="passwords[password_confirmation]" class="form-control auth-field-bottom" placeholder="Password Confirmation" required="">
+          <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Change Password</button>
+        </form>
+        <h3> Log Out </h3>
+        <button id="sign-out" class="btn btn-lg btn-primary btn-block" type="button">Log Out</button>
+      </div>
     </body>
 </html>
