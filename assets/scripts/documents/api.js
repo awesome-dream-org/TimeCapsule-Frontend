@@ -7,6 +7,9 @@ const getAllDocs = function(){
   return $.ajax({
     url: config.host + '/docs',
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
   });
 };
 
