@@ -7,6 +7,13 @@ const getAllDocs = function(){
   });
 };
 
+const getDoc = function(id){
+  return $.ajax({
+    url: 'http://localhost:4741/docs/' + id,
+    method: 'GET',
+  });
+};
+
 const createDocument = function(data){
   return $.ajax({
     url: 'http://localhost:4741/docs',
@@ -18,6 +25,7 @@ const createDocument = function(data){
 };
 
 module.exports = {
+  getDoc,
   getAllDocs,
   createDocument,
 };
