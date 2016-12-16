@@ -13,6 +13,13 @@ const onGetAllDocs = function(event){
     .catch(docsUi.failure);
 };
 
+const onGetAllMyDocs = function(event){
+  event.preventDefault();
+
+  docsApi.getAllMyDocs()
+    .then(docsUi.getAllMyDocsSuccess)
+    .catch(docsUi.failure);
+};
 
 const onGetDoc = function(event){
   event.preventDefault();
@@ -71,6 +78,7 @@ const onDeleteDoc = function(event){
 module.exports = {
   onGetDoc,
   onGetAllDocs,
+  onGetAllMyDocs,
   onCreateDoc,
   onUpdateDoc,
   onDeleteDoc,

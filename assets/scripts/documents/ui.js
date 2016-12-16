@@ -4,6 +4,10 @@ const getAllDocsSuccess = function(data){
   console.log(data);
 };
 
+const getAllMyDocsSuccess = function(data){
+  console.log(data);
+};
+
 const getDocSuccess = function(data){
   console.log(data);
 };
@@ -26,6 +30,7 @@ const failure = function(error){
 
 module.exports = {
   getAllDocsSuccess,
+  getAllMyDocsSuccess,
   getDocSuccess,
   createDocSuccess,
   updateDocSuccess,

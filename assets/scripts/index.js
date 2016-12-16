@@ -11,6 +11,7 @@ $(document).ready(function() {
   authEvents.addHandlers();
   $('#all-categories-button').on('click', catEvents.onGetAllCats);
   $('#all-documents-button').on('click', documents.onGetAllDocs);
+  $('#all-my-documents-button').on('click', documents.onGetAllMyDocs);
   $('#show-document-form').on('submit', documents.onGetDoc);
   $('#create-document-form').on('submit', documents.onCreateDoc);
   $('#update-document-form').on('submit', documents.onUpdateDoc);
