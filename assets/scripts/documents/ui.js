@@ -8,7 +8,11 @@ const getDocSuccess = function(data){
   console.log(data);
 };
 
-const createDocumentSuccess = function(data){
+const createDocSuccess = function(data){
+  console.log(data);
+};
+
+const updateDocSuccess = function(data){
   console.log(data);
 };
 
@@ -19,6 +23,7 @@ const failure = function(error){
 module.exports = {
   getAllDocsSuccess,
   getDocSuccess,
-  createDocumentSuccess,
+  createDocSuccess,
+  updateDocSuccess,
   failure,
 };

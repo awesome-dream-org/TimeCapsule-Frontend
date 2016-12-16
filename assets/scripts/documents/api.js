@@ -14,7 +14,7 @@ const getDoc = function(id){
   });
 };
 
-const createDocument = function(data){
+const createDoc = function(data){
   return $.ajax({
     url: 'http://localhost:4741/docs',
     method: 'POST',
@@ -24,8 +24,18 @@ const createDocument = function(data){
   });
 };
 
+const updateDoc = function(data){
+  return $.ajax({
+    url: 'http://localhost:4741/docs/' + data.document.id,
+    method: 'PATCH',
+    data,
+  });
+};
+
+
 module.exports = {
   getDoc,
   getAllDocs,
-  createDocument,
+  createDoc,
+  updateDoc,
 };
