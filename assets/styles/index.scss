@@ -1,17 +1,13 @@
-.content{
-  margin: 0 auto;
-  text-align: center;
-};
-
 body {
 	margin: 0;
   padding: 0;
 	font-family: 'Alegreya Sans SC', sans-serif;
-  background-image: url("http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-5.jpg");
+  background: #F0F8FF;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
+// Title and description styles
 h1 {
   margin: 20px;
   font-size: 50px;
@@ -19,11 +15,14 @@ h1 {
   border-bottom: 1px solid #111;
 }
 
-p {
+h3 {
+  margin: 20px;
   font-size: 30px;
   text-align: center;
 }
 
+
+// Sidebar and button styles
 #sidebar {
   background: #151718;
   width: 200px;
@@ -70,6 +69,7 @@ ul li a {
   right: -60px;
 }
 
+// Span tag styles for the stair look
 #sidebar-btn span {
   height: 1px;
   background: #111;
@@ -83,4 +83,115 @@ ul li a {
 
 #sidebar-btn span:nth-child(3){
   width: 50%;
+}
+
+// Authentication views and there styles
+
+.header-sign-up {
+  text-align: center;
+}
+
+.sign-up {
+display: none;
+height: 200px;
+width: 420px;
+margin: 100px auto;
+}
+
+.header-sign-in {
+  text-align: center;
+}
+
+.sign-in {
+  display: none;
+  height: 200px;
+  width: 420px;
+  margin: 100px auto;
+}
+
+.header-change-password {
+  text-align: center;
+}
+
+.change-password {
+  display: none;
+  width: 420px;
+  margin: 100px auto;
+}
+
+.sign-out {
+  display: none;
+  height: 200px;
+  width: 420px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.input {
+  margin-top: 20px;
+  padding: 10px;
+  width: 400px;
+  background: rgba(255,255,255,0.80);
+  font-size: 20px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.input:focus {
+  outline: none;
+}
+// Button styles for authentication
+
+#btn-one {
+  background: black;
+  color: white;
+  display: block;
+  height: 44px;
+  width: 44px;
+  float: right;
+  margin: 15px -5px 0 0;
+  padding: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+#btn-two {
+  background: black;
+  color: white;
+  display: block;
+  height: 44px;
+  width: 44px;
+  float: right;
+  margin: 15px -5px 0 0;
+  padding: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+#btn-three {
+  background: black;
+  color: white;
+  display: block;
+  height: 44px;
+  width: 44px;
+  float: right;
+  margin: 15px -5px 0 0;
+  padding: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+// Styles for the footer
+
+.footer {
+  background: rgba(255, 255, 255,0.80);
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin-left: -15px;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Alegreya Sans SC', sans-serif;
 }

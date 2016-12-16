@@ -9,16 +9,17 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+
       <h1>TimeCapsule</h1>
 
-      <p>Dig up some files and see what may be buried out there!</p>
+      <h3>Dig up some files and see what may be buried out there!</h3>
 
       <div id="sidebar">
         <ul>
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Sign In</a></li>
-          <li><a href="#">Change Password</a></li>
-          <li><a href="#">Sign Out</a></li>
+          <li><a id="auth-one"href="#">Sign Up</a></li>
+          <li><a id="auth-two"href="#">Sign In</a></li>
+          <li><a id="auth-three"href="#">Change Password</a></li>
+          <li><a id="auth-four"href="#">Sign Out</a></li>
         </ul>
 
         <div id="sidebar-btn">
@@ -28,37 +29,50 @@
         </div>
       </div>
 
-      <div class="content">
-        <h3> Sign-Up </h3>
-        <form id="sign-up" class="form-auth">
-          <label for="credentials[email]" class="sr-only">Email address</label>
-          <input type="text" name="credentials[email]" class="form-control auth-field-regular" placeholder="Email address" required="" autofocus="">
-          <label for="credentials[password]" class="sr-only">Password</label>
-          <input type="password" name="credentials[password]" class="form-control auth-field-regular" placeholder="Password" required="">
-          <label for="credentials[password_confirmation]" class="sr-only">Password</label>
-          <input type="password" id="credentials[password_confirmation]" name="credentials[password_confirmation]" class="form-control auth-field-bottom" placeholder="Password Confirmation" required="">
-          <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign Up</button>
-        </form>
-        <h3> Sign-In </h3>
-        <form id="sign-in" class="form-auth">
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="text" id="credentials[email]" name="credentials[email]" class="form-control auth-field-regular" placeholder="Email address" required="" autofocus="">
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" id="credentials[password]" name="credentials[password]" class="form-control auth-field-bottom" placeholder="Password" required="">
-          <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign in</button>
-        </form>
-        <h3> Change Pass </h3>
-        <form id="change-password" class="form-auth">
-          <label for="passwords[old]" class="sr-only">Current Password</label>
-          <input type="password" id="passwords[old]" name="passwords[old]" class="form-control auth-field-regular" placeholder="Current Password" required="">
-          <label for="passwords[new]" class="sr-only">New Password</label>
-          <input type="password" id="passwords[new]" name="passwords[new]" class="form-control auth-field-regular" placeholder="New Password" required="">
-          <label for="credentials[password_confirmation]" class="sr-only">Confirm New Password</label>
-          <input type="password" id="passwords[password_confirmation]" name="passwords[password_confirmation]" class="form-control auth-field-bottom" placeholder="Password Confirmation" required="">
-          <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Change Password</button>
-        </form>
-        <h3> Log Out </h3>
-        <button id="sign-out" class="btn btn-lg btn-primary btn-block" type="button">Log Out</button>
+      <div class="sign-up frame">
+
+          <h3 class="header-sign-up">Sign up</h3>
+
+          <form id="sign-up">
+            <input class="input" type="text" name="credentials[email]" placeholder="email"><br>
+            <input class="input" type="password" name="credentials[password]" placeholder="password"><br>
+            <input class="input" type="password" name="credentials[password_confirmation]" placeholder="confirm password"><br>
+            <button type="submit" id="btn-one" href="#"><i>+</i></button>
+          </form>
+        </div>
+
+        <div class="sign-in frame">
+
+       <h3 class="header-sign-in">Sign In</h3>
+
+       <form id="sign-in">
+         <input class="input" type="text" name="credentials[email]" placeholder="email"><br>
+         <input class="input" type="password" name="credentials[password]" placeholder="password"><br>
+         <button type="submit" id="btn-two" href="#"><i>+</i></button>
+       </form>
+     </div>
+
+     <div class="change-password frame">
+
+       <h3 class="header-change-password">Change Password</h3>
+
+       <form id="change-password">
+         <input class="input" type="password" name="passwords[old]" placeholder="old password"><br>
+         <input class="input" type="password" name="passwords[new]" placeholder="new password"><br>
+         <button type="submit" id="btn-three" href="#"><i>+</i></button>
+       </form>
+     </div>
+
+     <div class="sign-out frame">
+       <h3>You have been signed out! Thank you for using TimeCapsule, see you next
+         time!</h3>
+     </div>
+
+     <div class="footer">
+        <p>Site by Kara, Caleb, Kosta, Brandon</p>
+    </div>
+
+
       </div>
     </body>
 </html>
