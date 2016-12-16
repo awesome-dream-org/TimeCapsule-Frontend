@@ -4,6 +4,14 @@
 const docsApi = require('./api');
 const docsUi = require('./ui');
 
+const onGetAllDocs = function(event){
+  event.preventDefault();
+
+  docsApi.getAllDocs()
+    .then(docsUi.getAllDocsSuccess)
+    .catch(docsUi.failure);
+};
+
 const onCreateDocument = function(event){
   event.preventDefault();
 
@@ -16,5 +24,6 @@ const onCreateDocument = function(event){
 };
 
 module.exports = {
+  onGetAllDocs,
   onCreateDocument,
 };

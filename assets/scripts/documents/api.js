@@ -1,5 +1,12 @@
 'use strict';
 
+const getAllDocs = function(){
+  return $.ajax({
+    url: 'http://localhost:4741/docs',
+    method: 'GET',
+  });
+};
+
 const createDocument = function(data){
   return $.ajax({
     url: 'http://localhost:4741/docs',
@@ -11,5 +18,6 @@ const createDocument = function(data){
 };
 
 module.exports = {
+  getAllDocs,
   createDocument,
 };
