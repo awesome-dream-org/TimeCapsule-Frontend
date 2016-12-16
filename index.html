@@ -1,70 +1,121 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Testing Forms</title>
-
+    <title>TimeCapsule</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet">
 
     <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
   </head>
   <body class="container-fluid">
-    <button id="all-documents-button"> Get All Documents </button>
-    <form id="show-document-form">
-      <fieldset>
-        <legend>Show Doc</legend>
-        <label>
-          ID
-          <input type="text" name="doc[id]">
-        </label>
-        <input type="submit" name="submit" value="Show">
-      </fieldset>
-    </form>
-    <form id="create-document-form" action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
-      <fieldset>
-        <legend>Create Doc</legend>
-        <label>
-          Title
-          <input type="text" name="doc[title]">
-        </label>
-        <label>
-          Category
-          <input type="text" name="doc[category]">
-        </label>
-        <label>
-          Document
-          <input type="file" name="doc[file]">
-        </label>
-        <input type="submit" name="submit" value="Create">
-      </fieldset>
-    </form>
-    <form id="update-document-form">
-      <fieldset>
-        <legend>Update Doc</legend>
-        <label>
-          ID
-          <input type="text" name="doc[id]">
-        </label>
-        <label>
-          New Title
-          <input type="text" name="doc[title]">
-        </label>
-        <label>
-          New Category
-          <input type="text" name="doc[category]">
-        </label>
-        <input type="submit" name="submit" value="Update">
-      </fieldset>
-    </form>
-    <form id="delete-document-form">
-      <fieldset>
-        <legend>Delete Doc</legend>
-        <label>
-          ID
-          <input type="text" name="doc[id]">
-        </label>
-        <input type="submit" name="submit" value="Delete">
-      </fieldset>
-    </form>
+    <h1>TimeCapsule</h1>
+
+    <p>Dig up some files and see what may be buried out there!</p>
+
+    <div id="sidebar">
+      <ul>
+        <li><a href="#">Sign Up</a></li>
+        <li><a href="#">Sign In</a></li>
+        <li><a href="#">Change Password</a></li>
+        <li><a href="#">Sign Out</a></li>
+      </ul>
+
+      <div id="sidebar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="content">
+      <h3> Sign-Up </h3>
+      <form id="sign-up" class="form-auth">
+        <label for="credentials[email]" class="sr-only">Email address</label>
+        <input type="text" name="credentials[email]" class="form-control auth-field-regular" placeholder="Email address" required="" autofocus="">
+        <label for="credentials[password]" class="sr-only">Password</label>
+        <input type="password" name="credentials[password]" class="form-control auth-field-regular" placeholder="Password" required="">
+        <label for="credentials[password_confirmation]" class="sr-only">Password</label>
+        <input type="password" id="credentials[password_confirmation]" name="credentials[password_confirmation]" class="form-control auth-field-bottom" placeholder="Password Confirmation" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign Up</button>
+      </form>
+      <h3> Sign-In </h3>
+      <form id="sign-in" class="form-auth">
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="text" id="credentials[email]" name="credentials[email]" class="form-control auth-field-regular" placeholder="Email address" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="credentials[password]" name="credentials[password]" class="form-control auth-field-bottom" placeholder="Password" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign in</button>
+      </form>
+      <h3> Change Pass </h3>
+      <form id="change-password" class="form-auth">
+        <label for="passwords[old]" class="sr-only">Current Password</label>
+        <input type="password" id="passwords[old]" name="passwords[old]" class="form-control auth-field-regular" placeholder="Current Password" required="">
+        <label for="passwords[new]" class="sr-only">New Password</label>
+        <input type="password" id="passwords[new]" name="passwords[new]" class="form-control auth-field-regular" placeholder="New Password" required="">
+        <label for="credentials[password_confirmation]" class="sr-only">Confirm New Password</label>
+        <input type="password" id="passwords[password_confirmation]" name="passwords[password_confirmation]" class="form-control auth-field-bottom" placeholder="Password Confirmation" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Change Password</button>
+      </form>
+      <h3> Log Out </h3>
+      <button id="sign-out" class="btn btn-lg btn-primary btn-block" type="button">Log Out</button>
+      <button id="all-documents-button"> Get All Documents </button>
+      <form id="show-document-form">
+        <fieldset>
+          <legend>Show Doc</legend>
+          <label>
+            ID
+            <input type="text" name="doc[id]">
+          </label>
+          <input type="submit" name="submit" value="Show">
+        </fieldset>
+      </form>
+      <form id="create-document-form" action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
+        <fieldset>
+          <legend>Create Doc</legend>
+          <label>
+            Title
+            <input type="text" name="doc[title]">
+          </label>
+          <label>
+            Category
+            <input type="text" name="doc[category]">
+          </label>
+          <label>
+            Document
+            <input type="file" name="doc[file]">
+          </label>
+          <input type="submit" name="submit" value="Create">
+        </fieldset>
+      </form>
+      <form id="update-document-form">
+        <fieldset>
+          <legend>Update Doc</legend>
+          <label>
+            ID
+            <input type="text" name="doc[id]">
+          </label>
+          <label>
+            New Title
+            <input type="text" name="doc[title]">
+          </label>
+          <label>
+            New Category
+            <input type="text" name="doc[category]">
+          </label>
+          <input type="submit" name="submit" value="Update">
+        </fieldset>
+      </form>
+      <form id="delete-document-form">
+        <fieldset>
+          <legend>Delete Doc</legend>
+          <label>
+            ID
+            <input type="text" name="doc[id]">
+          </label>
+          <input type="submit" name="submit" value="Delete">
+        </fieldset>
+      </form>
+    </div>
   </body>
 </html>
