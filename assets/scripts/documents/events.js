@@ -18,7 +18,7 @@ const onGetDoc = function(event){
   event.preventDefault();
 
   let data = getFormFields(event.target);
-  let id = data.document.id;
+  let id = data.doc.id;
 
   // console.log("onGetDoc ran, and data is ", data);
   // console.log("onGetDoc ran, and id is ", id);
@@ -57,7 +57,7 @@ const onDeleteDoc = function(event){
   event.preventDefault();
 
   let data = getFormFields(event.target);
-  let id = data.document.id;
+  let id = data.doc.id;
 
   console.log("onDeleteDoc ran, and data is ", data);
   console.log("onDeleteDoc ran, and id is ", id);

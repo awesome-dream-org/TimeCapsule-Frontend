@@ -26,7 +26,7 @@ const createDoc = function(data){
 
 const updateDoc = function(data){
   return $.ajax({
-    url: 'http://localhost:4741/docs/' + data.document.id,
+    url: 'http://localhost:4741/docs/' + data.doc.id,
     method: 'PATCH',
     data,
   });
