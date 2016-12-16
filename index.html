@@ -1,22 +1,307 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
 
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
 
-      <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <title>Time Capsule</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+</head>
+
+<body>
+
+  <!-- NAVBAR STARTS -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <!-- <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> -->
+          </button>
+        <a class="navbar-brand" href="#">Time Capsule</a>
+
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign up / in
+                <!--<span class="caret"></span>-->
+              </a>
+            <ul class="dropdown-menu">
+              <!--<li role="separator" class="divider"></li>-->
+
+              <!-- sign up - Button trigger modal -->
+              <li>
+                <a href="#">
+                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-up-modal">
+                      Sign up
+                    </button>
+                </a>
+              </li>
+
+              <!-- sign in - Button trigger modal -->
+              <li>
+                <a href="#">
+                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-in-modal">
+                    Sign in
+                  </button>
+                </a>
+              </li>
+
+              <!-- change password - Button trigger modal -->
+              <li>
+                <a href="#">
+                  <button id="change-password-open" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#change-password-modal">
+                    Change password
+                  </button>
+                </a>
+              </li>
+
+              <!-- Sign Out Button  -->
+              <li>
+                <a href="#">
+                  <form id="sign-out">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                      Sign Out
+                    </button>
+                  </form>
+                </a>
+              </li>
+
+              <!-- Create Places Button  -->
+              <li>
+                <a href="#">
+                  <button id="create-place-open" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#create-place-modal">
+                    Add a Place
+                  </button>
+                </a>
+              </li>
+
+              <!-- Update Place Button  -->
+              <li>
+                <a href="#">
+                  <button id="update-place-open" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#update-place-modal">
+                    Edit a Place
+                  </button>
+                </a>
+              </li>
+
+              <!-- Show Places Button -->
+              <li><a href="#">
+                    <form id="show-places">
+                      <button type="button" class="btn btn-primary btn-lg">
+                        Show Places
+                      </button>
+                    </form>
+                  </a>
+              </li>
+
+
+              <!-- Delete place button -->
+              <li>
+                <a href="#">
+                    <button id="delete-place-open" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#delete-place-modal">
+                      Delete a Place
+                    </button>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+    <h5 id="messages"></h5>
+  </nav>
+  <!-- NAVBAR ENDS -->
+
+  <!-- Sign up Modal -->
+  <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+          <h4 class="modal-title">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-up" class="modal-form">
+            <div class="form-group">
+              <input name="credentials[email]" type="email" class="form-control" id="sign-up-email" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <input name="credentials[password]" type="password" class="form-control" id="sign-up-password" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <input name="credentials[password_confirmation]" type="password" class="form-control" id="sign-up-password-conf" placeholder="Confirm Password">
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign in Modal -->
+  <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Sign In</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-in" class="modal-form">
+            <div class="form-group">
+              <input name="credentials[email]" type="email" class="form-control" id="sign-in-email" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <input name="credentials[password]" type="password" class="form-control" id="sign-in-password" placeholder="Password">
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change password Modal -->
+  <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h2 class="modal-title">Change Password</h2>
+        </div>
+        <div class="modal-body">
+          <form id="change-password" class="modal-form">
+            <div class="form-group">
+              <input type="email" class="form-control" id="change-password-email" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <input name="passwords[old]" type="password" class="form-control" id="old-password" placeholder="Old Password">
+            </div>
+            <div class="form-group">
+              <input name="passwords[new]" type="password" class="form-control" id="new-password" placeholder="New Password">
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Places Modal -->
+  <div class="modal fade" id="create-place-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Add a Place to the map</h4>
+        </div>
+        <div class="modal-body">
+          <form id="create-place" class="modal-form">
+            <div class="form-group">
+              <input name="place[name]" type="text" class="form-control" id="create-place-name" placeholder="Enter name of place" aria-describedby="nameHelp">
+                <small id="nameHelp" class="form-text text-muted">Name must be unique.</small>
+            </div>
+            <div class="form-group">
+              <input name="place[place_type]" type="text" class="form-control" id="create-place-type" placeholder="Type of place. Is it a Restaurant? Bar, Cafe? Bar? Cafe, Restaurant? Taverna?">
+            </div>
+            <div class="form-group">
+              <input name="place[location]" type="text" class="form-control" id="create-place-location" placeholder="Enter Lattitude and Longitude, like this: 37.967913, 23.739452">
+            </div>
+            <div class="form-group">
+              <input name="place[address]" type="text" class="form-control" id="create-place-address" placeholder="Address">
+            </div>
+            <div class="form-group">
+              <input name="place[phone]" type="tel" class="form-control" id="create-place-phone" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+              <input name="place[rating]" type="number" min="1" max="5" class="form-control" id="create-place-rating" placeholder="How Time Capsule free is it?  1 - 5 stars">
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Update Places Modal -->
+  <div class="modal fade" id="update-place-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Edit a Place</h4>
+        </div>
+        <div class="modal-body">
+          <form id="update-place" class="modal-form">
+            <div class="form-group">
+              <input name="place[ID]" type="number" class="form-control" id="update-id" placeholder="Enter ID of place">
+              <input name="place[name]" type="text" class="form-control" id="update-place-name" placeholder="Enter name of place">
+              <!-- aria-describedby="emailHelp" <=this goes inside input tag above
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+              <input name="place[place_type]" type="text" class="form-control" id="update-place-type" placeholder="Type of place. Is it a Restaurant? Bar, Cafe? Bar? Cafe, Restaurant? Taverna?">
+            </div>
+            <div class="form-group">
+              <input name="place[location]" type="text" class="form-control" id="update-place-location" placeholder="Enter Lattitude and Longitude, like this: 37.967913, 23.739452">
+            </div>
+            <div class="form-group">
+              <input name="place[address]" type="text" class="form-control" id="update-place-address" placeholder="Address">
+            </div>
+            <div class="form-group">
+              <input name="place[phone]" type="tel" class="form-control" id="update-place-phone" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+              <input name="place[rating]" type="number" min="1" max="5" class="form-control" id="update-place-rating" placeholder="How smoke free is it?  1 - 5 stars">
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Place Modal -->
+  <div class="modal fade" id="delete-place-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+          <h4 class="modal-title">Delete a Place</h4>
+        </div>
+        <div class="modal-body">
+          <form id="delete-place" class="modal-form">
+            <input type="number" class="form-control" id="delete-id" placeholder="Enter ID of Place">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
 </html>
