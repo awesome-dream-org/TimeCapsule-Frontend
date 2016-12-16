@@ -1,2 +1,69 @@
-$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+body {
+	margin: 0;
+  padding: 0;
+	font-family: 'Biryani', sans-serif;
+  background-image: url("http://www.planwallpaper.com/static/images/Orange-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#sidebar {
+  background: #151718;
+  width: 200px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: -200px;
+  top: 0px;
+  transition: left 0.3s linear;
+}
+
+#sidebar.visible{
+  left: 0px;
+  transition: left 0.3s linear;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  background: #1C1E1F;
+  color: #CCC;
+  border-bottom: 1px solid #111;
+  display: block;
+  width: 180px;
+  padding: 10px;
+}
+
+#sidebar-btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  margin: 20px;
+  position: absolute;
+  top: 0px;
+  right: -60px;
+}
+
+#sidebar-btn span {
+  height: 1px;
+  background: #111;
+  margin-bottom: 5px;
+  display: block;
+}
+
+#sidebar-btn span:nth-child(2){
+  width: 75%;
+}
+
+#sidebar-btn span:nth-child(3){
+  width: 50%;
+}
