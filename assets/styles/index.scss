@@ -1,10 +1,22 @@
 body {
 	margin: 0;
   padding: 0;
-	font-family: 'Biryani', sans-serif;
-  background-image: url("http://www.planwallpaper.com/static/images/Orange-background.png");
+	font-family: 'Alegreya Sans SC', sans-serif;
+  background-image: url("http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-5.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+h1 {
+  margin: 20px;
+  font-size: 50px;
+  text-align: center;
+  border-bottom: 1px solid #111;
+}
+
+p {
+  font-size: 30px;
+  text-align: center;
 }
 
 #sidebar {
