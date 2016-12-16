@@ -16,6 +16,10 @@ const updateDocSuccess = function(data){
   console.log(data);
 };
 
+const deleteDocSuccess = function(data){
+  console.log(data);
+};
+
 const failure = function(error){
   console.error(error);
 };
@@ -25,5 +29,6 @@ module.exports = {
   getDocSuccess,
   createDocSuccess,
   updateDocSuccess,
+  deleteDocSuccess,
   failure,
 };

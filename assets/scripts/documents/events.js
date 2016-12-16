@@ -52,9 +52,26 @@ const onUpdateDoc = function(event){
     .catch(docsUi.failure);
 };
 
+
+const onDeleteDoc = function(event){
+  event.preventDefault();
+
+  let data = getFormFields(event.target);
+  let id = data.document.id;
+
+  console.log("onDeleteDoc ran, and data is ", data);
+  console.log("onDeleteDoc ran, and id is ", id);
+
+  docsApi.deleteDoc(id)
+    .then(docsUi.deleteDocSuccess)
+    .catch(docsUi.failure);
+};
+
+
 module.exports = {
   onGetDoc,
   onGetAllDocs,
   onCreateDoc,
   onUpdateDoc,
+  onDeleteDoc,
 };

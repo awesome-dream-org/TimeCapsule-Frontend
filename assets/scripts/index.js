@@ -7,4 +7,5 @@ $(()=>{
   $('#show-document-form').on('submit', documents.onGetDoc);
   $('#create-document-form').on('submit', documents.onCreateDoc);
   $('#update-document-form').on('submit', documents.onUpdateDoc);
+  $('#delete-document-form').on('submit', documents.onDeleteDoc);
 });

@@ -32,10 +32,18 @@ const updateDoc = function(data){
   });
 };
 
+const deleteDoc = function(id){
+  return $.ajax({
+    url: 'http://localhost:4741/docs/' + id,
+    method: 'DELETE',
+  });
+};
+
 
 module.exports = {
   getDoc,
   getAllDocs,
   createDoc,
   updateDoc,
+  deleteDoc,
 };
