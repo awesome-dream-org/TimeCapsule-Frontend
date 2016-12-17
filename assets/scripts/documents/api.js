@@ -25,7 +25,7 @@ const getAllMyDocs = function () {
 
 const getDoc = function(id){
   return $.ajax({
-    url: config.host + '/docs' + id,
+    url: config.host + '/docs/' + id,
     method: 'GET',
   });
 };
