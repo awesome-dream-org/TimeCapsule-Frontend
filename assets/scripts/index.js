@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 // Changes page views depending on what authentication link is clicked
 
-$("#auth-one").click(function() {
+$("#sign-up-nav").click(function() {
   $('.frame').hide();
   $('.sign-up').show();
   $('#sidebar').toggleClass('visible');
@@ -25,7 +25,7 @@ $("#auth-one").click(function() {
 //
 // });
 
-$("#auth-two").click(function() {
+$("#sign-in-nav").click(function() {
   $('.frame').hide();
   $('.sign-in').show();
   $('#sidebar').toggleClass('visible');
@@ -36,7 +36,7 @@ $("#btn-two").click(function() {
   $('body').show();
 });
 
-$("#auth-three").click(function() {
+$("#change-password-nav").click(function() {
   $('.frame').hide();
   $('.change-password').show();
   $('#sidebar').toggleClass('visible');
@@ -47,7 +47,7 @@ $("#btn-three").click(function() {
   $('body').show();
 });
 
-$("#auth-four").click(function() {
+$("#sign-out-nav").click(function() {
   $('.frame').hide();
   $('.sign-out').show();
   $('#sidebar').toggleClass('visible');
