@@ -34,7 +34,7 @@ h3 {
   transition: left 0.3s linear;
 }
 
-#sidebar.visible{
+#sidebar.visible {
   left: 0px;
   transition: left 0.3s linear;
 }
@@ -87,15 +87,20 @@ ul li a {
 
 // Authentication views and there styles
 
+form {
+  position: relative;
+  transition: .5s;
+}
+
 .header-sign-up {
   text-align: center;
 }
 
 .sign-up {
 display: none;
-height: 200px;
-width: 420px;
-margin: 100px auto;
+width: 100%;
+max-width: 400px;
+margin: 0 auto;
 }
 
 .header-sign-in {
@@ -104,9 +109,9 @@ margin: 100px auto;
 
 .sign-in {
   display: none;
-  height: 200px;
-  width: 420px;
-  margin: 100px auto;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .header-change-password {
@@ -115,25 +120,25 @@ margin: 100px auto;
 
 .change-password {
   display: none;
-  width: 420px;
-  margin: 100px auto;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .sign-out {
   display: none;
-  height: 200px;
-  width: 420px;
-  margin: 100px auto;
-  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .input {
-  margin-top: 20px;
+  margin: 20px 5%;
   padding: 10px;
-  width: 400px;
-  background: rgba(255,255,255,0.80);
+  width: 90%;
   font-size: 20px;
   font-family: 'Alegreya Sans SC', sans-serif;
+  box-sizing: border-box;
 }
 
 .input:focus {
@@ -142,28 +147,26 @@ margin: 100px auto;
 // Button styles for authentication
 
 #btn-one {
-  background: black;
-  color: white;
-  display: block;
-  height: 44px;
-  width: 44px;
-  float: right;
-  margin: 15px -5px 0 0;
-  padding: 8px;
-  font-size: 20px;
-  cursor: pointer;
-  font-family: 'Alegreya Sans SC', sans-serif;
+    background: black;
+    color: white;
+    display: block;
+    width: 90%;
+    float: right;
+    margin: -9px 5%;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 #btn-two {
   background: black;
   color: white;
   display: block;
-  height: 44px;
-  width: 44px;
+  width: 90%;
   float: right;
-  margin: 15px -5px 0 0;
-  padding: 8px;
+  margin: -9px 5%;
+  padding: 10px;
   font-size: 20px;
   cursor: pointer;
   font-family: 'Alegreya Sans SC', sans-serif;
@@ -173,11 +176,10 @@ margin: 100px auto;
   background: black;
   color: white;
   display: block;
-  height: 44px;
-  width: 44px;
+  width: 90%;
   float: right;
-  margin: 15px -5px 0 0;
-  padding: 8px;
+  margin: -9px 5%;
+  padding: 10px;
   font-size: 20px;
   cursor: pointer;
   font-family: 'Alegreya Sans SC', sans-serif;
@@ -194,4 +196,9 @@ margin: 100px auto;
   text-align: center;
   padding: 10px;
   font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+// Buldge animation for on submit form fields
+.buldge {
+  transform: scale(1.1);
 }
