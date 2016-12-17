@@ -19,11 +19,11 @@ $("#auth-one").click(function() {
   $('#sidebar').toggleClass('visible');
 });
 
-$("#btn-one").click(function() {
-  $('.frame').hide();
-  $('.sign-in').show();
-
-});
+// $("#btn-one").click(function() {
+//   $('.frame').hide();
+//   $('.sign-in').show();
+//
+// });
 
 $("#auth-two").click(function() {
   $('.frame').hide();
@@ -51,4 +51,13 @@ $("#auth-four").click(function() {
   $('.frame').hide();
   $('.sign-out').show();
   $('#sidebar').toggleClass('visible');
+});
+
+$('form').on('submit', function(event) {
+  console.log('hey there you made it', this); // The form being submitted.
+  $(this).addClass('buldge');
+  let self = this;
+  setTimeout(function() {
+    $(self).removeClass('buldge');
+  }, 250);
 });
