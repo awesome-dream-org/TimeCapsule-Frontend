@@ -32,6 +32,7 @@ h3 {
   left: -200px;
   top: 0px;
   transition: left 0.3s linear;
+  z-index: 1;
 }
 
 #sidebar.visible {
