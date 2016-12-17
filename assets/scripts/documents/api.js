@@ -58,6 +58,9 @@ const deleteDoc = function(id){
   return $.ajax({
     url: config.host + '/docs/' + id,
     method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
   });
 };
 
