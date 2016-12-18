@@ -1,29 +1,25 @@
 'use strict';
+
 require('../styles/index.scss');
 const authEvents = require('./auth/events.js');
 
-// Allows user to click icon to open sidebar
+$(() => {
 
-$(document).ready(function() {
+  // Allows user to click icon to open sidebar
   $('#sidebar-btn').click(function() {
     $('#sidebar').toggleClass('visible');
   });
+
+  // Add event handlers
   authEvents.addHandlers();
 });
 
 // Changes page views depending on what authentication link is clicked
-
 $("#sign-up-nav").click(function() {
   $('.frame').hide();
   $('.sign-up').show();
   $('#sidebar').toggleClass('visible');
 });
-
-// $("#btn-one").click(function() {
-//   $('.frame').hide();
-//   $('.sign-in').show();
-//
-// });
 
 $("#sign-in-nav").click(function() {
   $('.frame').hide();
