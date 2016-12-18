@@ -78,10 +78,4 @@ module.exports = {
   onCreateDoc,
   onDownloadDoc,
   onGetAllFiles,
-  // onGetDoc,
-  // onGetAllDocs,
-  // onGetAllMyDocs,
-  // onCreateDoc,
-  // onUpdateDoc,
-  // onDeleteDoc,
 };
