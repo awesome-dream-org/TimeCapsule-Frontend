@@ -12,6 +12,10 @@ const showCreateDocForm = function(){
   $('#content').html(uploadFileTemplate());
 };
 
+const createDocSuccess = function(data){
+  console.log(data);
+};
+
 // const getAllDocsSuccess = function(data){
 //   console.log(data);
 // };
@@ -20,9 +24,6 @@ const showCreateDocForm = function(){
 //   console.log(data);
 // };
 //
-// const createDocSuccess = function(data){
-//   console.log(data);
-// };
 //
 // const updateDocSuccess = function(data){
 //   console.log(data);
@@ -41,7 +42,7 @@ module.exports = {
   showCreateDocForm,
   // getAllDocsSuccess,
   // getDocSuccess,
-  // createDocSuccess,
+  createDocSuccess,
   // updateDocSuccess,
   // deleteDocSuccess,
   failure,

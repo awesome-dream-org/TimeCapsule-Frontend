@@ -86,13 +86,23 @@ const onUploadFile = function(event) {
   catEvents.onGetAllCats(event);
 };
 
+const onCreateDoc = function(event) {
+  event.preventDefault();
+  let data = new FormData(event.target);
+  api.createDoc(data)
+    .then(ui.createDocSuccess)
+    .catch(ui.failure);
+};
+
 const addHandlers = () => {
   $('#content').on('click', '#my-files-link', onMyFiles);
   $('#content').on('click', '#upload-file-link', onUploadFile);
+  $('#content').on('submit', '#create-document-form', onCreateDoc);
 };
 
 module.exports = {
   addHandlers,
+  onCreateDoc,
   // onGetDoc,
   // onGetAllDocs,
   // onGetAllMyDocs,
