@@ -80,6 +80,14 @@ const onMyFiles = function() {
     .catch(ui.failure);
 };
 
+const onGetAllFiles = function(event){
+  event.preventDefault();
+
+  api.getAllDocs()
+    .then(ui.getAllDocsSuccess)
+    .catch(ui.failure);
+};
+
 const onUploadFile = function(event) {
   event.preventDefault();
   ui.showCreateDocForm();
@@ -118,16 +126,17 @@ const onDeleteDoc = function(event) {
 const addHandlers = () => {
   $('#content').on('click', '#my-files-link', onMyFiles);
   $('#content').on('click', '#upload-file-link', onUploadFile);
+  $('#content').on('click', '#all-files-link', onGetAllFiles);
   $('#content').on('submit', '#create-document-form', onCreateDoc);
   $('#content').on('click', '.download-btn', onDownloadDoc);
   $('#content').on('click', '.delete-btn', onDeleteDoc);
-
 };
 
 module.exports = {
   addHandlers,
   onCreateDoc,
   onDownloadDoc,
+  onGetAllFiles,
   // onGetDoc,
   // onGetAllDocs,
   // onGetAllMyDocs,

@@ -1,6 +1,7 @@
 'use strict';
 
 const myFilesTemplate = require('../templates/my-files.handlebars');
+const allFilesTemplate = require('../templates/all-files.handlebars');
 const uploadFileTemplate = require('../templates/upload-file.handlebars');
 
 const showMyDocs = function(myFiles){
@@ -16,8 +17,8 @@ const createDocSuccess = function(data){
   console.log(data);
 };
 
-const getAllDocsSuccess = function(data){
-  console.log(data);
+const getAllDocsSuccess = function(allFiles){
+  $('#content').html(allFilesTemplate(allFiles));
 };
 
 const getDocSuccess = function(data){
