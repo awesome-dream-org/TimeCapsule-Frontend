@@ -1,36 +1,15 @@
 'use strict';
-const store = require('../store');
-// const showPlacesTemplate = require('../templates/place-listing.handlebars');
 
-// hide the following buttons and items on page load
-// $("#status").hide();
-// $("#show-places").hide();
-// $("#change-password-open").hide();
-// $("#sign-out").hide();
-// $("#create-place-open").hide();
-// $("#show-places").hide();
-// $("#update-place-open").hide();
-// $("#delete-place-open").hide();
+const store = require('../store');
+const launchTemplate = require('../templates/launch.handlebars');
 
 const signInSuccess = (data) => {
   store.user = data.user;
-  // $("#messages").text("sign in success");
-  // $("#status").show();
-  // $("#change-password-open").show();
-  // $("#sign-out").show();
-  // $("#show-places").show();
-  // $("#create-place-open").show();
-  // $("#show-places").show();
-  // $("#update-place-open").show();
-  // $("#delete-place-open").show();
+  $('#content').html(launchTemplate());
 };
 
 const signOutSuccess = () => {
-  // $("#messages").text("sign out success");
-  // $("#status").hide();
-  // $("#show-places").hide();
-  // $("#change-password-open").hide();
-  // $("#sign-out").hide();
+  $("#messages").text("sign out success");
 };
 
 const changePasswordSuccess = () => {
