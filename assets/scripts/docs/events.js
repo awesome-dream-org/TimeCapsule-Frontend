@@ -94,15 +94,26 @@ const onCreateDoc = function(event) {
     .catch(ui.failure);
 };
 
+const onDownloadDoc = function(event) {
+  event.preventDefault();
+  let id = event.target.id.replace('download-','');
+  api.getDoc(id)
+    .then(ui.getDocSuccess)
+    .catch(ui.failure);
+};
+
 const addHandlers = () => {
   $('#content').on('click', '#my-files-link', onMyFiles);
   $('#content').on('click', '#upload-file-link', onUploadFile);
   $('#content').on('submit', '#create-document-form', onCreateDoc);
+  $('#content').on('click', '.download-btn', onDownloadDoc);
+
 };
 
 module.exports = {
   addHandlers,
   onCreateDoc,
+  onDownloadDoc,
   // onGetDoc,
   // onGetAllDocs,
   // onGetAllMyDocs,

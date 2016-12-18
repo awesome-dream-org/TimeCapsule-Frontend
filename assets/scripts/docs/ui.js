@@ -16,22 +16,22 @@ const createDocSuccess = function(data){
   console.log(data);
 };
 
-// const getAllDocsSuccess = function(data){
-//   console.log(data);
-// };
+const getAllDocsSuccess = function(data){
+  console.log(data);
+};
 
-// const getDocSuccess = function(data){
-//   console.log(data);
-// };
-//
-//
-// const updateDocSuccess = function(data){
-//   console.log(data);
-// };
-//
-// const deleteDocSuccess = function(data){
-//   console.log(data);
-// };
+const getDocSuccess = function(data){
+  window.location.assign(data.doc.url);
+};
+
+
+const updateDocSuccess = function(data){
+  console.log(data);
+};
+
+const deleteDocSuccess = function(data){
+  console.log(data);
+};
 
 const failure = function(error){
   console.error(error);
@@ -40,10 +40,10 @@ const failure = function(error){
 module.exports = {
   showMyDocs,
   showCreateDocForm,
-  // getAllDocsSuccess,
-  // getDocSuccess,
+  getAllDocsSuccess,
+  getDocSuccess,
   createDocSuccess,
-  // updateDocSuccess,
-  // deleteDocSuccess,
+  updateDocSuccess,
+  deleteDocSuccess,
   failure,
 };

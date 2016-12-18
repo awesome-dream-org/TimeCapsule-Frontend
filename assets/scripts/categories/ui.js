@@ -3,7 +3,6 @@
 const updateCategorySelect = function(data){
   let list = $('#select-category')[0];
   for (let i = 0; i < data.categories.length; i++) {
-    console.log(i, data.categories[i].text);
     list.options[list.options.length] =
       new Option(
         data.categories[i].text,
