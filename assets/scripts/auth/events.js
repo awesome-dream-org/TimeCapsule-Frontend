@@ -4,36 +4,36 @@ const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields.js');
 
-const onSignUp = function(event){
+const onSignUp = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signUp(data)
-  .done(ui.signUpSuccess)
-  .fail(ui.failure);
+    .done(ui.signUpSuccess)
+    .fail(ui.failure);
 };
 
-const onSignIn = function(event){
+const onSignIn = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signIn(data)
-  .done(ui.signInSuccess)
-  .fail(ui.failure);
+    .done(ui.signInSuccess)
+    .fail(ui.failure);
 };
 
-const onSignOut = function(event){
+const onSignOut = function(event) {
   event.preventDefault();
   // let data = getFormFields(event.target);
   api.signOut()
-  .done(ui.signOutSuccess)
-  .fail(ui.failure);
+    .done(ui.signOutSuccess)
+    .fail(ui.failure);
 };
 
-const onChangePassword = function(event){
+const onChangePassword = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.changePassword(data)
-  .done(ui.changePasswordSuccess)
-  .fail(ui.failure);
+    .done(ui.changePasswordSuccess)
+    .fail(ui.failure);
 };
 
 const addHandlers = () => {

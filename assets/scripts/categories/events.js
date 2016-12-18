@@ -3,7 +3,7 @@
 const api = require('./api');
 const ui = require('./ui');
 
-const onGetAllCats = function(event){
+const onGetAllCats = function(event) {
   event.preventDefault();
 
   api.getAllCats()

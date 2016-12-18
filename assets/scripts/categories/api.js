@@ -1,6 +1,6 @@
 'use strict';
 
-const getAllCats = function(){
+const getAllCats = function() {
   return $.ajax({
     url: 'http://localhost:4741/categories',
     method: 'GET',

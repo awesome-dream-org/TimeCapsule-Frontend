@@ -1,7 +1,5 @@
 'use strict';
 
-// const ui = require('./ui');
-
 const onSideBarBtn = function() {
   $('#sidebar').toggleClass('visible');
 };
@@ -34,7 +32,7 @@ const onBtnThreeLink = function() {
   $('body').show();
 };
 
-const onSignOutLink = function(){
+const onSignOutLink = function() {
   $('.frame').hide();
   $('.sign-out').show();
   $('#sidebar').toggleClass('visible');
@@ -48,7 +46,6 @@ const addHandlers = () => {
   $('#sign-in-nav').on('click', onSignInLink);
   $('#sign-up-nav').on('click', onSignUpLink);
   $('#sidebar-btn').on('click', onSideBarBtn);
-
 };
 
 module.exports = {
