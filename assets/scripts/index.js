@@ -3,10 +3,12 @@
 require('../styles/index.scss');
 const authEvents = require('./auth/events.js');
 const navEvents = require('./nav/events.js');
+const docEvents = require('./documents/events.js');
 
 $(() => {
   authEvents.addHandlers();
   navEvents.addHandlers();
+  docEvents.addHandlers();
 });
 
 $('form').on('submit', function() {

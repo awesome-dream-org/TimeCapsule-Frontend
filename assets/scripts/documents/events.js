@@ -1,85 +1,94 @@
 'use strict';
 
-const getFormFields = require('../../../lib/get-form-fields');
-const docsApi = require('./api');
-const docsUi = require('./ui');
+const api = require('./api');
+const ui = require('./ui');
 
+// const onGetAllDocs = function(event){
+//   event.preventDefault();
+//
+//   api.getAllDocs()
+//     .then(ui.getAllDocsSuccess)
+//     .catch(ui.failure);
+// };
+//
+// const onGetAllMyDocs = function(event){
+//   event.preventDefault();
+//
+//   api.getAllMyDocs()
+//     .then(ui.getAllMyDocsSuccess)
+//     .catch(ui.failure);
+// };
+//
+// const onGetDoc = function(event){
+//   event.preventDefault();
+//
+//   let data = getFormFields(event.target);
+//   let id = data.doc.id;
+//
+//   // console.log("onGetDoc ran, and data is ", data);
+//   // console.log("onGetDoc ran, and id is ", id);
+//
+//   api.getDoc(id)
+//     .then(ui.getDocSuccess)
+//     .catch(ui.failure);
+// };
+//
+//
+// const onCreateDoc = function(event){
+//   event.preventDefault();
+//
+//   let data = new FormData(event.target);
+//   // console.log("onCreateDoc ran, and data is ", data);
+//
+//   api.createDoc(data)
+//     .then(ui.createDocSuccess)
+//     .catch(ui.failure);
+// };
+//
+//
+// const onUpdateDoc = function(event){
+//   event.preventDefault();
+//
+//   let data = getFormFields(event.target);
+//   console.log("onUpdateDoc ran and data is ", data);
+//
+//   api.updateDoc(data)
+//     .then(ui.updateDocSuccess)
+//     .catch(ui.failure);
+// };
+//
+//
+// const onDeleteDoc = function(event){
+//   event.preventDefault();
+//
+//   let data = getFormFields(event.target);
+//   let id = data.doc.id;
+//
+//   console.log("onDeleteDoc ran, and data is ", data);
+//   console.log("onDeleteDoc ran, and id is ", id);
+//
+//   api.deleteDoc(id)
+//     .then(ui.deleteDocSuccess)
+//     .catch(ui.failure);
+// };
 
-const onGetAllDocs = function(event){
-  event.preventDefault();
-
-  docsApi.getAllDocs()
-    .then(docsUi.getAllDocsSuccess)
-    .catch(docsUi.failure);
+const onMyFiles = function() {
+    event.preventDefault();
+    api.getAllMyDocs()
+      .then(ui.showMyDocs)
+      .catch(ui.failure);
 };
 
-const onGetAllMyDocs = function(event){
-  event.preventDefault();
-
-  docsApi.getAllMyDocs()
-    .then(docsUi.getAllMyDocsSuccess)
-    .catch(docsUi.failure);
+const addHandlers = () => {
+  $('#content').on('click', '#my-files-link', onMyFiles);
 };
-
-const onGetDoc = function(event){
-  event.preventDefault();
-
-  let data = getFormFields(event.target);
-  let id = data.doc.id;
-
-  // console.log("onGetDoc ran, and data is ", data);
-  // console.log("onGetDoc ran, and id is ", id);
-
-  docsApi.getDoc(id)
-    .then(docsUi.getDocSuccess)
-    .catch(docsUi.failure);
-};
-
-
-const onCreateDoc = function(event){
-  event.preventDefault();
-
-  let data = new FormData(event.target);
-  // console.log("onCreateDoc ran, and data is ", data);
-
-  docsApi.createDoc(data)
-    .then(docsUi.createDocSuccess)
-    .catch(docsUi.failure);
-};
-
-
-const onUpdateDoc = function(event){
-  event.preventDefault();
-
-  let data = getFormFields(event.target);
-  console.log("onUpdateDoc ran and data is ", data);
-
-  docsApi.updateDoc(data)
-    .then(docsUi.updateDocSuccess)
-    .catch(docsUi.failure);
-};
-
-
-const onDeleteDoc = function(event){
-  event.preventDefault();
-
-  let data = getFormFields(event.target);
-  let id = data.doc.id;
-
-  console.log("onDeleteDoc ran, and data is ", data);
-  console.log("onDeleteDoc ran, and id is ", id);
-
-  docsApi.deleteDoc(id)
-    .then(docsUi.deleteDocSuccess)
-    .catch(docsUi.failure);
-};
-
 
 module.exports = {
-  onGetDoc,
-  onGetAllDocs,
-  onGetAllMyDocs,
-  onCreateDoc,
-  onUpdateDoc,
-  onDeleteDoc,
+  addHandlers,
+  // onGetDoc,
+  // onGetAllDocs,
+  // onGetAllMyDocs,
+  // onCreateDoc,
+  // onUpdateDoc,
+  // onDeleteDoc,
 };
