@@ -79,8 +79,17 @@ const onMyFiles = function() {
       .catch(ui.failure);
 };
 
+const onUploadFile = function() {
+  console.log("UPLOAD FILE TIME!");
+    // event.preventDefault();
+    // api.getAllMyDocs()
+    //   .then(ui.showMyDocs)
+    //   .catch(ui.failure);
+};
+
 const addHandlers = () => {
   $('#content').on('click', '#my-files-link', onMyFiles);
+  $('#content').on('click', '#upload-file-link', onUploadFile);
 };
 
 module.exports = {
