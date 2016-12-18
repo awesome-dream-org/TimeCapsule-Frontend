@@ -73,18 +73,15 @@ const ui = require('./ui');
 // };
 
 const onMyFiles = function() {
-    event.preventDefault();
-    api.getAllMyDocs()
-      .then(ui.showMyDocs)
-      .catch(ui.failure);
+  event.preventDefault();
+  api.getAllMyDocs()
+    .then(ui.showMyDocs)
+    .catch(ui.failure);
 };
 
 const onUploadFile = function() {
-  console.log("UPLOAD FILE TIME!");
-    // event.preventDefault();
-    // api.getAllMyDocs()
-    //   .then(ui.showMyDocs)
-    //   .catch(ui.failure);
+  event.preventDefault();
+  ui.showCreateDocForm();
 };
 
 const addHandlers = () => {
