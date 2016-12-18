@@ -1,5 +1,7 @@
 'use strict';
 
+const msg = require('../common/user-messages.js');
+
 const updateCategorySelect = function(data) {
   let list = $('#select-category')[0];
   for (let i = 0; i < data.categories.length; i++) {
@@ -11,8 +13,8 @@ const updateCategorySelect = function(data) {
   $('#select-category').append(list);
 };
 
-const failure = function(error) {
-  console.error(error);
+const failure = function() {
+  msg.setUserMessage(msg.genericError);
 };
 
 module.exports = {

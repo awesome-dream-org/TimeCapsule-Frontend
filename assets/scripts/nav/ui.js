@@ -1,8 +1,9 @@
 'use strict';
 
-const failure = (error) => {
-  console.error(error);
-  $("#messages").text("failure");
+const msg = require('../common/user-messages.js');
+
+const failure = function() {
+  msg.setUserMessage(msg.genericFailure);
 };
 
 module.exports = {

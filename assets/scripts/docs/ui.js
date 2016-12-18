@@ -3,9 +3,9 @@
 const myFilesTemplate = require('../templates/my-files.handlebars');
 const allFilesTemplate = require('../templates/all-files.handlebars');
 const uploadFileTemplate = require('../templates/upload-file.handlebars');
+const msg = require('../common/user-messages.js');
 
 const showMyDocs = function(myFiles) {
-  console.log(myFiles);
   $('#content').html(myFilesTemplate(myFiles));
 };
 
@@ -13,8 +13,8 @@ const showCreateDocForm = function() {
   $('#content').html(uploadFileTemplate());
 };
 
-const createDocSuccess = function(data) {
-  console.log(data);
+const createDocSuccess = function() {
+  msg.setUserMessage(msg.createSuccess);
 };
 
 const getAllDocsSuccess = function(allFiles) {
@@ -23,19 +23,19 @@ const getAllDocsSuccess = function(allFiles) {
 
 const getDocSuccess = function(data) {
   window.location.assign(data.doc.url);
+  msg.setUserMessage(msg.downloadSuccess);
 };
 
-
-const updateDocSuccess = function(data) {
-  console.log(data);
+const updateDocSuccess = function() {
+  msg.setUserMessage(msg.updateSuccess);
 };
 
-const deleteDocSuccess = function(data) {
-  console.log(data);
+const deleteDocSuccess = function() {
+  msg.setUserMessage(msg.deleteSuccess);
 };
 
-const failure = function(error) {
-  console.error(error);
+const failure = function() {
+  msg.setUserMessage(msg.genericFailure);
 };
 
 module.exports = {

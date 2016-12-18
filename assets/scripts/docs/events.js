@@ -55,12 +55,12 @@ const onDeleteDoc = function(event) {
   event.preventDefault();
   let id = event.target.id.replace('delete-', '');
   api.deleteDoc(id)
-    .then(ui.deleteDocSuccess)
     .then(function() {
       api.getAllMyDocs()
         .then(ui.showMyDocs)
         .catch(ui.failure);
     })
+    .then(ui.deleteDocSuccess)
     .catch(ui.failure);
 };
 
