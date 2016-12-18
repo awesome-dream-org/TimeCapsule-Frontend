@@ -102,11 +102,25 @@ const onDownloadDoc = function(event) {
     .catch(ui.failure);
 };
 
+const onDeleteDoc = function(event) {
+  event.preventDefault();
+  let id = event.target.id.replace('delete-','');
+  api.deleteDoc(id)
+    .then(ui.deleteDocSuccess)
+    .then(function() {
+      api.getAllMyDocs()
+        .then(ui.showMyDocs)
+        .catch(ui.failure);
+    })
+    .catch(ui.failure);
+};
+
 const addHandlers = () => {
   $('#content').on('click', '#my-files-link', onMyFiles);
   $('#content').on('click', '#upload-file-link', onUploadFile);
   $('#content').on('submit', '#create-document-form', onCreateDoc);
   $('#content').on('click', '.download-btn', onDownloadDoc);
+  $('#content').on('click', '.delete-btn', onDeleteDoc);
 
 };
 
