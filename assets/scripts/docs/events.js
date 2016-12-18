@@ -2,6 +2,7 @@
 
 const api = require('./api');
 const ui = require('./ui');
+const catEvents = require('../categories/events.js');
 
 // const onGetAllDocs = function(event){
 //   event.preventDefault();
@@ -79,9 +80,10 @@ const onMyFiles = function() {
     .catch(ui.failure);
 };
 
-const onUploadFile = function() {
+const onUploadFile = function(event) {
   event.preventDefault();
   ui.showCreateDocForm();
+  catEvents.onGetAllCats(event);
 };
 
 const addHandlers = () => {

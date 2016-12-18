@@ -1,7 +1,15 @@
 'use strict';
 
-const getAllCatsSuccess = function(data){
-  console.log(data);
+const updateCategorySelect = function(data){
+  let list = $('#select-category')[0];
+  for (let i = 0; i < data.categories.length; i++) {
+    console.log(i, data.categories[i].text);
+    list.options[list.options.length] =
+      new Option(
+        data.categories[i].text,
+        data.categories[i].id);
+  }
+  $('#select-category').append(list);
 };
 
 const failure = function(error){
@@ -9,6 +17,6 @@ const failure = function(error){
 };
 
 module.exports = {
-  getAllCatsSuccess,
+  updateCategorySelect,
   failure,
 };
