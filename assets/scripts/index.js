@@ -2,51 +2,14 @@
 
 require('../styles/index.scss');
 const authEvents = require('./auth/events.js');
+const navEvents = require('./nav/events.js');
 
 $(() => {
 
-  // Allows user to click icon to open sidebar
-  $('#sidebar-btn').click(function() {
-    $('#sidebar').toggleClass('visible');
-  });
-
   // Add event handlers
   authEvents.addHandlers();
-});
+  navEvents.addHandlers();
 
-// Changes page views depending on what authentication link is clicked
-$("#sign-up-nav").click(function() {
-  $('.frame').hide();
-  $('.sign-up').show();
-  $('#sidebar').toggleClass('visible');
-});
-
-$("#sign-in-nav").click(function() {
-  $('.frame').hide();
-  $('.sign-in').show();
-  $('#sidebar').toggleClass('visible');
-});
-
-$("#btn-two").click(function() {
-  $('.frame').hide();
-  $('body').show();
-});
-
-$("#change-password-nav").click(function() {
-  $('.frame').hide();
-  $('.change-password').show();
-  $('#sidebar').toggleClass('visible');
-});
-
-$("#btn-three").click(function() {
-  $('.frame').hide();
-  $('body').show();
-});
-
-$("#sign-out-nav").click(function() {
-  $('.frame').hide();
-  $('.sign-out').show();
-  $('#sidebar').toggleClass('visible');
 });
 
 $('form').on('submit', function(event) {
