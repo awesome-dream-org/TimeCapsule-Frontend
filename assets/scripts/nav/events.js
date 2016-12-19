@@ -41,11 +41,17 @@ const onChangePasswordLink = function() {
   $('.description').hide();
 };
 
+// Allows user to get back to the launch page from within navbar
+const onLaunchPage = function() {
+  ui.showLaunchPage();
+};
+
 const addHandlers = () => {
   $('#change-password-nav').on('click', onChangePasswordLink);
   $('#sign-in-nav').on('click', onSignInLink);
   $('#sign-up-nav').on('click', onSignUpLink);
   $('#sidebar-btn').on('click', onSideBarBtn);
+  $('#launch-page-nav').on('click', onLaunchPage);
 };
 
 module.exports = {
