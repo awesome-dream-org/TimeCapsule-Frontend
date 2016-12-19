@@ -13,6 +13,7 @@ $(() => {
 
 // Changes page views depending on what authentication link is clicked
 
+// Click sign up btn in nav bar
 $("#sign-up-nav").click(function() {
   $('.frame').hide();
   $('.sign-up').show();
@@ -22,6 +23,7 @@ $("#sign-up-nav").click(function() {
   $('.file-table-two').hide();
 });
 
+// Submit button below sign-up form (with redirect to sign in)
 $("#btn-one").click(function() {
   $('.frame').hide();
   $('.sign-in').show();
@@ -31,6 +33,7 @@ $("#btn-one").click(function() {
   $('.file-table-two').hide();
 });
 
+// Sign in on side bar
 $("#sign-in-nav").click(function() {
   $('.frame').hide();
   $('.sign-in').show();
@@ -40,6 +43,7 @@ $("#sign-in-nav").click(function() {
   $('.file-table-two').hide();
 });
 
+// Submit button on sign-in form and directs to launch page
 $("#btn-two").click(function() {
   $('.frame').hide();
   $('body').show();
@@ -50,6 +54,7 @@ $("#btn-two").click(function() {
   $('.description').hide();
 });
 
+// Change password button on nav bar to change pw form
 $("#change-password-nav").click(function() {
   $('.frame').hide();
   $('.change-password').show();
@@ -60,6 +65,7 @@ $("#change-password-nav").click(function() {
   $('.description').hide();
 });
 
+// On change-password form (submit button) and redirects to launch page
 $("#btn-three").click(function() {
   $('.frame').hide();
   $('body').show();
@@ -70,6 +76,7 @@ $("#btn-three").click(function() {
   $('.description').hide();
 });
 
+// Sign out on nav bar and redirects to signout view/message
 $("#sign-out-nav").click(function() {
   $('.frame').hide();
   $('.sign-out').show();
@@ -82,6 +89,7 @@ $("#sign-out-nav").click(function() {
 
 // Launch page button views of data tables
 
+// Go to manage my files
 $(".one").click(function() {
   $('.launch').hide();
   $('.file-table-one').show();
@@ -89,12 +97,15 @@ $(".one").click(function() {
   $('.description').hide();
 });
 
+// Go to view all files
 $(".two").click(function() {
   $('.launch').hide();
   $('.file-table-two').show();
   $('.file-table-one').hide();
   $('.description').hide();
 });
+
+// NO EVENT HANDLER EVENT YET FOR CREATE
 
 $('form').on('submit', function() {
   $(this).addClass('buldge');
