@@ -1,3 +1,6 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
 html, body {
 	margin: 0;
   padding: 0;
@@ -101,7 +104,7 @@ form {
 }
 
 .sign-up {
-display: none;
+// display: none;
 width: 100%;
 max-width: 400px;
 margin: 0 auto;
@@ -112,7 +115,7 @@ margin: 0 auto;
 }
 
 .sign-in {
-  display: none;
+  // display: none;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
@@ -123,14 +126,14 @@ margin: 0 auto;
 }
 
 .change-password {
-  display: none;
+  // display: none;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
 }
 
 .sign-out {
-  display: none;
+  // display: none;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
@@ -233,7 +236,7 @@ file:hover {
 // Hide launch page styling
 
 .launch {
-  display: none;
+  // display: none;
 }
 // File table styling
 
@@ -241,7 +244,6 @@ file:hover {
     width: 80%;
     margin: 0 auto;
     height: 335px;
-    display: none;
     overflow: auto;
 }
 

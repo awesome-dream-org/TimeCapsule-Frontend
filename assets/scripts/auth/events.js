@@ -81,10 +81,11 @@ const onChangePassword = function(event) {
 // };
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp);
-  $('#sign-in').on('submit', onSignIn);
+  $('#content').on('submit', '#sign-up', onSignUp);
+  $('#content').on('submit', '#sign-in', onSignIn);
+  $('#content').on('submit', '#change-password', onChangePassword);
   $('#sign-out-nav').on('click', onSignOut);
-  $('#change-password').on('submit', onChangePassword);
+
   // $("#btn-one").on('click', onBtnOne);
   // $('#btn-two').on('click', onBtnTwoLink);
   // $('#btn-three').on('click', onBtnThreeLink);

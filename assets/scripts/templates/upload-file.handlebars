@@ -1,9 +1,5 @@
 <aside>{{> user-message}}</aside>
 <article>
-  <h2> Upload a File </h2>
-  <p><small>
-    Upload a new file for your memories!
-  </small></p>
 
   <div>
     <form id="create-document-form" method="post" enctype="multipart/form-data">
@@ -15,7 +11,6 @@
       </label>
       <label>
         Category
-        {{!-- <input type="text" name="doc[category]"> --}}
         <select id="select-category" name="doc[category]">
           <option value="" selected disabled>Select a Category...</option>
         </select>
