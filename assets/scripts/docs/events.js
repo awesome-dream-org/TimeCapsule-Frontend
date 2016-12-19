@@ -4,17 +4,6 @@ const api = require('./api');
 const ui = require('./ui');
 const catEvents = require('../categories/events.js');
 
-// const onUpdateDoc = function(event){
-//   event.preventDefault();
-//
-//   let data = getFormFields(event.target);
-//   console.log("onUpdateDoc ran and data is ", data);
-//
-//   api.updateDoc(data)
-//     .then(ui.updateDocSuccess)
-//     .catch(ui.failure);
-// };
-
 const onMyFiles = function() {
   event.preventDefault();
   api.getAllMyDocs()
