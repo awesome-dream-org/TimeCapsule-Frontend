@@ -1,14 +1,14 @@
 'use strict';
+
 require('../styles/index.scss');
 const authEvents = require('./auth/events.js');
+const navEvents = require('./nav/events.js');
+const docEvents = require('./docs/events.js');
 
-// Allows user to click icon to open sidebar
-
-$(document).ready(function() {
-  $('#sidebar-btn').click(function() {
-    $('#sidebar').toggleClass('visible');
-  });
+$(() => {
   authEvents.addHandlers();
+  navEvents.addHandlers();
+  docEvents.addHandlers();
 });
 
 // Changes page views depending on what authentication link is clicked
@@ -96,9 +96,7 @@ $(".two").click(function() {
   $('.description').hide();
 });
 
-
-$('form').on('submit', function(event) {
-  console.log('hey there you made it', this); // The form being submitted.
+$('form').on('submit', function() {
   $(this).addClass('buldge');
   let self = this;
   setTimeout(function() {

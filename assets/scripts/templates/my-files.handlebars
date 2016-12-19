@@ -1,0 +1,44 @@
+<aside>{{> user-message}}</aside>
+<article>
+  <h2> Manage My Files </h2>
+  <p><small>
+    Below is your list of docs to manage.
+  </small></p>
+
+  <div>
+    <table>
+      <tr>
+        <th>File Name</th>
+        <th>Category</th>
+        <th>Date Created</th>
+        <th>Date Modified</th>
+        <th>Download</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      {{#each docs as |doc|}}
+        <tr>
+          <td>{{doc.title}}</td>
+          <td>{{doc.category}}</td>
+          <td>{{doc.createdAt}}</td>
+          <td>{{doc.updatedAt}}</td>
+          <td>
+            <button class="download-btn" id="download-{{doc._id}}" type="button" class="btn-sm btn-defaults">
+              Download
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn-sm btn-defaults">
+              Edit
+            </button>
+          </td>
+          <td>
+            <button class="delete-btn" type="button" id="delete-{{doc._id}}" class="btn-sm btn-defaults">
+              Delete
+            </button>
+          </td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</article>

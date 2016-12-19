@@ -1,0 +1,32 @@
+<aside>{{> user-message}}</aside>
+<article>
+  <h2> View All Files </h2>
+  <p><small>
+    Below is a list of all the things.
+  </small></p>
+
+  <div>
+    <table>
+      <tr>
+        <th>File Name</th>
+        <th>Category</th>
+        <th>Date Created</th>
+        <th>Date Modified</th>
+        <th>Download</th>
+      </tr>
+      {{#each docs as |doc|}}
+        <tr>
+          <td>{{doc.title}}</td>
+          <td>{{doc.category}}</td>
+          <td>{{doc.createdAt}}</td>
+          <td>{{doc.updatedAt}}</td>
+          <td>
+            <button class="download-btn" id="download-{{doc._id}}" type="button" class="btn-sm btn-defaults">
+              Download
+            </button>
+          </td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</article>
