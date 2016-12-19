@@ -20,8 +20,9 @@ const onSignUpLink = function() {
 
 // Sign in link from nav bar
 const onSignInLink = function() {
-  $('.frame').hide();
-  $('.sign-in').show();
+  ui.showSignInForm();
+  // $('.frame').hide();
+  // $('.sign-in').show();
   $('#sidebar').toggleClass('visible');
   $('.launch').hide();
   $('.file-table-one').hide();
