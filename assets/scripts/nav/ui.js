@@ -20,6 +20,7 @@ const showChangePasswordForm = function() {
 
 const showLaunchPage = function() {
   $('#content').html(launchTemplate());
+  $('#launch-page-nav').hide();
 };
 
 const failure = function() {
