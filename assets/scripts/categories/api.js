@@ -1,8 +1,10 @@
 'use strict';
 
+const app = require('../config.js');
+
 const getAllCats = function() {
   return $.ajax({
-    url: 'http://localhost:4741/categories',
+    url: app.host + '/categories',
     method: 'GET',
   });
 };
