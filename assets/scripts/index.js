@@ -11,6 +11,9 @@ $(() => {
   authEvents.addHandlers();
   navEvents.addHandlers();
   docEvents.addHandlers();
+  $('#change-password-nav').hide();
+  $('#sign-out-nav').hide();
+  $('#launch-page-nav').hide();
 });
 
 // Go to manage my files

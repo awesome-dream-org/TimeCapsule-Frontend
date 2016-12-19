@@ -13,6 +13,11 @@ const signInSuccess = (data) => {
   $('.file-table-two').hide();
   $('.description').hide();
   $('#content').html(launchTemplate());
+  // hiding/showing navbar items
+  $('#change-password-nav').show();
+  $('#sign-out-nav').show();
+  $('#sign-up-nav').hide();
+  $('#sign-in-nav').hide();
 };
 
 const signOutSuccess = () => {
@@ -24,6 +29,12 @@ const signOutSuccess = () => {
   $('.file-table-one').hide();
   $('.file-table-two').hide();
   $('.description').hide();
+  // hiding/showing navbar items
+  $('#change-password-nav').hide();
+  $('#sign-out-nav').hide();
+  $('#launch-page-nav').hide();
+  $('#sign-up-nav').show();
+  $('#sign-in-nav').show();
 };
 
 const changePasswordSuccess = () => {

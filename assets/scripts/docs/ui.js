@@ -7,10 +7,12 @@ const msg = require('../common/user-messages.js');
 
 const showMyDocs = function(myFiles) {
   $('#content').html(myFilesTemplate(myFiles));
+  $('#launch-page-nav').show();
 };
 
 const showCreateDocForm = function() {
   $('#content').html(uploadFileTemplate());
+  $('#launch-page-nav').show();
 };
 
 const createDocSuccess = function() {
@@ -19,6 +21,7 @@ const createDocSuccess = function() {
 
 const getAllDocsSuccess = function(allFiles) {
   $('#content').html(allFilesTemplate(allFiles));
+  $('#launch-page-nav').show();
 };
 
 const getDocSuccess = function(data) {
