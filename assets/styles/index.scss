@@ -269,6 +269,15 @@ caption {
   font-size: 30px;
 }
 
+.upload-file {
+  max-width: 80%;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: slategrey;
+}
+
+
 @media (max-width: 400px) {
   .file-names {
     width: 33.33%;
