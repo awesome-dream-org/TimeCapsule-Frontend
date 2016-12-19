@@ -4,8 +4,10 @@ require('../styles/index.scss');
 const authEvents = require('./auth/events.js');
 const navEvents = require('./nav/events.js');
 const docEvents = require('./docs/events.js');
+const titleTemplate = require('./templates/title.handlebars');
 
 $(() => {
+  $('#content').html(titleTemplate);
   authEvents.addHandlers();
   navEvents.addHandlers();
   docEvents.addHandlers();
