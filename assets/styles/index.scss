@@ -269,20 +269,14 @@ caption {
   font-size: 30px;
 }
 
-#create-document-form {
-  width: 100%;
-  margin: 15% auto;
-	background-color: slategrey;
-	text-align: center;
+.upload-file {
+  max-width: 80%;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: slategrey;
 }
 
-fieldset {
-  height: 130px;
-}
-
-.upload-submit {
-  margin-left: -118px;
-}
 
 @media (max-width: 400px) {
   .file-names {
