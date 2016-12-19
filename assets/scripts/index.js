@@ -18,7 +18,7 @@ $(() => {
 
 // Go to manage my files
 $(".one").click(function() {
-  $('.launch').hide();
+  // $('.launch').hide();
   $('.file-table-one').show();
   $('.file-table-two').hide();
   $('.description').hide();
@@ -26,7 +26,7 @@ $(".one").click(function() {
 
 // Go to view all files
 $(".two").click(function() {
-  $('.launch').hide();
+  // $('.launch').hide();
   $('.file-table-two').show();
   $('.file-table-one').hide();
   $('.description').hide();
