@@ -13,7 +13,7 @@ const onSignUpLink = function() {
   // $('.frame').hide();
   // $('.sign-up').show();
   $('#sidebar').toggleClass('visible');
-  $('.launch').hide();
+  // $('.launch').hide();
   $('.file-table-one').hide();
   $('.file-table-two').hide();
 };
@@ -24,7 +24,7 @@ const onSignInLink = function() {
   // $('.frame').hide();
   // $('.sign-in').show();
   $('#sidebar').toggleClass('visible');
-  $('.launch').hide();
+  // $('.launch').hide();
   $('.file-table-one').hide();
   $('.file-table-two').hide();
 };
@@ -35,7 +35,7 @@ const onChangePasswordLink = function() {
   // $('.frame').hide();
   // $('.change-password').show();
   $('#sidebar').toggleClass('visible');
-  $('.launch').hide();
+  // $('.launch').hide();
   $('.file-table-one').hide();
   $('.file-table-two').hide();
   $('.description').hide();

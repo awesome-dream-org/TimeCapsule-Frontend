@@ -2,16 +2,12 @@
 
 const store = require('../store');
 const launchTemplate = require('../templates/launch.handlebars');
+const signInTemplate = require('../templates/sign-in.handlebars');
+const titleTemplate = require('../templates/title.handlebars');
 
 const signInSuccess = (data) => {
   store.user = data.user;
-  $('.frame').hide();
-  $('body').show();
-  // $('form').find('input').val('');
-  $('.launch').show();
-  $('.file-table-one').hide();
-  $('.file-table-two').hide();
-  $('.description').hide();
+  // load the launch page handlebars template
   $('#content').html(launchTemplate());
   // hiding/showing navbar items
   $('#change-password-nav').show();
@@ -21,14 +17,10 @@ const signInSuccess = (data) => {
 };
 
 const signOutSuccess = () => {
-  $("#messages").text("sign out success");
-  $('.frame').hide();
-  $('.sign-out').show();
+  // redirect user to the title page
+  $('#content').html(titleTemplate());
+  // close the navbar
   $('#sidebar').toggleClass('visible');
-  $('.launch').hide();
-  $('.file-table-one').hide();
-  $('.file-table-two').hide();
-  $('.description').hide();
   // hiding/showing navbar items
   $('#change-password-nav').hide();
   $('#sign-out-nav').hide();
@@ -38,24 +30,13 @@ const signOutSuccess = () => {
 };
 
 const changePasswordSuccess = () => {
-  $("#messages").text("password changed");
-  $('.frame').hide();
-  $('body').show();
-  // $('form').find('input').val('');
-  $('.launch').show();
-  $('.file-table-one').hide();
-  $('.file-table-two').hide();
-  $('.description').hide();
+  // redirect user to launch page
+  $('#content').html(launchTemplate());
 };
 
 const signUpSuccess = () => {
-  $("#messages").text("sign up success");
-  $('.frame').hide();
-  $('.sign-in').show();
-  // $('form').find('input').val('');
-  $('.launch').hide();
-  $('.file-table-one').hide();
-  $('.file-table-two').hide();
+  // redirect user to Sign In form
+  $('#content').html(signInTemplate());
 };
 
 const failure = (error) => {
