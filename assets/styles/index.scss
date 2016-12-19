@@ -1,7 +1,10 @@
-body {
+html, body {
 	margin: 0;
   padding: 0;
-	font-family: 'Alegreya Sans SC', sans-serif;
+  height: 100%;
+  width: 100%;
+  display: table;
+	font-family: 'Nobile', sans-serif;
   background: #F0F8FF;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,7 +20,7 @@ h1 {
 
 h3 {
   margin: 20px;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -138,7 +141,7 @@ margin: 0 auto;
   padding: 10px;
   width: 90%;
   font-size: 20px;
-  font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: 'Nobile', sans-serif;
   box-sizing: border-box;
 }
 
@@ -157,7 +160,7 @@ margin: 0 auto;
     padding: 10px;
     font-size: 20px;
     cursor: pointer;
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Nobile', sans-serif;
 }
 
 #btn-two {
@@ -170,7 +173,7 @@ margin: 0 auto;
   padding: 10px;
   font-size: 20px;
   cursor: pointer;
-  font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: 'Nobile', sans-serif;
 }
 
 #btn-three {
@@ -183,23 +186,90 @@ margin: 0 auto;
   padding: 10px;
   font-size: 20px;
   cursor: pointer;
-  font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: 'Nobile', sans-serif;
 }
 
 // Styles for the footer
 
-.footer {
-  background: rgba(255, 255, 255,0.80);
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
-  margin-left: -15px;
+.wrapper {
+  padding: 20px;
+  height: auto;
   text-align: center;
-  padding: 10px;
-  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+footer {
+  background-color: slategrey;
+  display: table-row;
+  height: 35px;
 }
 
 // Buldge animation for on submit form fields
 .buldge {
   transform: scale(1.1);
+}
+
+// Image button styling
+
+.file {
+  width: 100%;
+  max-width: 500px;
+  float: left;
+}
+
+file:hover {
+  color: green;
+}
+
+.file-names {
+  display: inline-block;
+  float: left;
+  width: 33.33%;
+  font-size: 25px;
+  margin-top: -25px;
+}
+
+
+
+// Hide launch page styling
+
+.launch {
+  display: none;
+}
+// File table styling
+
+.file-table-one, .file-table-two  {
+    width: 80%;
+    margin: 0 auto;
+    height: 335px;
+    display: none;
+    overflow: auto;
+}
+
+table, th, td {
+  margin: 30px auto;
+  background-color: slategrey;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+tr {
+  color: black;
+  text-align: center
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+caption {
+  margin: 20px;
+  font-size: 30px;
+}
+
+@media (max-width: 400px) {
+  .file-names {
+    width: 33.33%;
+    float: none;
+  }
 }
