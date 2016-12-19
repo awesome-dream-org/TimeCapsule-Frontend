@@ -3,17 +3,18 @@
 const api = require('./api');
 const ui = require('./ui');
 const catEvents = require('../categories/events.js');
+const getFormFields = require('../../../lib/get-form-fields.js');
 
-// const onUpdateDoc = function(event){
-//   event.preventDefault();
-//
-//   let data = getFormFields(event.target);
-//   console.log("onUpdateDoc ran and data is ", data);
-//
-//   api.updateDoc(data)
-//     .then(ui.updateDocSuccess)
-//     .catch(ui.failure);
-// };
+const onUpdateDoc = function(event){
+  event.preventDefault();
+
+  let id = event.target.id.replace('edit-', '');
+  let data = getFormFields(event.target);
+  console.log("What data is signed up", data);
+  api.updateDoc(data, id)
+    .then(ui.updateDocSuccess)
+    .catch(ui.failure);
+};
 
 const onMyFiles = function() {
   event.preventDefault();
@@ -71,6 +72,7 @@ const addHandlers = () => {
   $('#content').on('submit', '#create-document-form', onCreateDoc);
   $('#content').on('click', '.download-btn', onDownloadDoc);
   $('#content').on('click', '.delete-btn', onDeleteDoc);
+  $('#content').on('click', '.edit-btn', onUpdateDoc);
 };
 
 module.exports = {
@@ -78,4 +80,5 @@ module.exports = {
   onCreateDoc,
   onDownloadDoc,
   onGetAllFiles,
+  onUpdateDoc,
 };

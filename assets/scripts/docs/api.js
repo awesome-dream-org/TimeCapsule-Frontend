@@ -43,9 +43,9 @@ const createDoc = function(data) {
   });
 };
 
-const updateDoc = function(data) {
+const updateDoc = function(data, id) {
   return $.ajax({
-    url: config.host + '/docs/' + data.doc.id,
+    url: config.host + '/docs/' + id,
     method: 'PATCH',
     data,
     headers: {

@@ -24,7 +24,7 @@
           </td>
           <td>
             <a href="#">
-              <button id="update-doc-open" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#update-doc-modal">
+              <button id="update-doc-open" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#update-doc-modal-{{doc._id}}">
                 <span class="glyphicon glyphicon-pencil"></span>
               </button>
             </a>
@@ -39,9 +39,8 @@
             </a>
           </td>
         </tr>
-
         <!-- Update Docs Modal -->
-        <div class="modal fade" id="update-doc-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="update-doc-modal-{{doc._id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -50,20 +49,17 @@
               </div>
               <div class="modal-body">
                 <form id="update-doc" class="modal-form">
-                  <div class="form-group">
-                    <input name="docs[ID]" type="text" class="form-control" id="update-doc-id" placeholder="Enter ID of File.">
-                  </div>
                   <div>
-                    <input name="file[title]" type="text" class="form-control" id="update-doc-title" placeholder="Enter title of File.">
-                    <!-- aria-describedby="emailHelp" <=this goes inside input tag above
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    <input name="file[title]" type="text" class="form-control" id="update-doc-title" placeholder="Enter File Name" value="{{doc.title}}">
                   </div>
                   <br>
                   <div class="form-group">
-                    <input name="file[category]" type="text" class="form-control" id="update-doc-category" placeholder="Enter category of File.">
+                    <input name="file[category]" type="text" class="form-control" id="update-doc-category" placeholder="Enter File Category" value="{{doc.category}}">
                   </div>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button class="edit-btn" id="edit-{{doc._id}}" type="button" class="btn-sm btn-defaults">
+                    Update
+                  </button>
                 </form>
               </div>
             </div>
