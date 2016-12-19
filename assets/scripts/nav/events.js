@@ -31,8 +31,9 @@ const onSignInLink = function() {
 
 // Change PW on nav bar
 const onChangePasswordLink = function() {
-  $('.frame').hide();
-  $('.change-password').show();
+  ui.showChangePasswordForm();
+  // $('.frame').hide();
+  // $('.change-password').show();
   $('#sidebar').toggleClass('visible');
   $('.launch').hide();
   $('.file-table-one').hide();
