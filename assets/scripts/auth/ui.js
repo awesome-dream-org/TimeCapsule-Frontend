@@ -4,6 +4,7 @@ const store = require('../store');
 const launchTemplate = require('../templates/launch.handlebars');
 const signInTemplate = require('../templates/sign-in.handlebars');
 const titleTemplate = require('../templates/title.handlebars');
+const msg = require('../common/user-messages.js');
 
 const signInSuccess = (data) => {
   store.user = data.user;
@@ -14,6 +15,7 @@ const signInSuccess = (data) => {
   $('#sign-out-nav').show();
   $('#sign-up-nav').hide();
   $('#sign-in-nav').hide();
+  msg.clearUserMessage();
 };
 
 const signOutSuccess = () => {
@@ -27,21 +29,24 @@ const signOutSuccess = () => {
   $('#launch-page-nav').hide();
   $('#sign-up-nav').show();
   $('#sign-in-nav').show();
+  msg.setUserMessage(msg.signOutSuccess);
 };
 
 const changePasswordSuccess = () => {
   // redirect user to launch page
   $('#content').html(launchTemplate());
+  msg.setUserMessage(msg.changePasswordSuccess);
 };
 
 const signUpSuccess = () => {
   // redirect user to Sign In form
   $('#content').html(signInTemplate());
+  msg.setUserMessage(msg.signUpSuccess);
 };
 
 const failure = (error) => {
   console.error(error);
-  $("#messages").text("failure");
+  msg.setUserMessage(msg.genericError);
 };
 
 module.exports = {
