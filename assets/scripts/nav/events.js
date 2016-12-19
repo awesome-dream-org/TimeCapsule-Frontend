@@ -28,6 +28,7 @@ const onChangePasswordLink = function() {
 // Allows user to get back to the launch page from within navbar
 const onLaunchPage = function() {
   ui.showLaunchPage();
+  $('#sidebar').toggleClass('visible');
 };
 
 const addHandlers = () => {
