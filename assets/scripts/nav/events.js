@@ -1,5 +1,7 @@
 'use strict';
 
+const ui = require('./ui');
+
 // Open the side bar
 const onSideBarBtn = function() {
   $('#sidebar').toggleClass('visible');
@@ -7,8 +9,9 @@ const onSideBarBtn = function() {
 
 // Sign up link from nav bar
 const onSignUpLink = function() {
-  $('.frame').hide();
-  $('.sign-up').show();
+  ui.showSignUpForm();
+  // $('.frame').hide();
+  // $('.sign-up').show();
   $('#sidebar').toggleClass('visible');
   $('.launch').hide();
   $('.file-table-one').hide();
