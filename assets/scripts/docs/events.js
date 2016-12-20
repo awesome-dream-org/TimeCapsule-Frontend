@@ -65,9 +65,13 @@ const onUploadFile = function(event) {
 const onCreateDoc = function(event) {
   event.preventDefault();
   let data = new FormData(event.target);
-  api.createDoc(data)
-    .then(ui.createDocSuccess)
-    .catch(ui.createDocFailure);
+  if ($('#doc-title').val() && $('#select-category').val() && $('#doc-file').val()) {
+    api.createDoc(data)
+      .then(ui.createDocSuccess)
+      .catch(ui.failure);
+  } else {
+    ui.createDocFailure();
+  }
 };
 
 const onDownloadDoc = function(event) {

@@ -15,7 +15,7 @@ const changePasswordSuccess = 'You have successfully changed your password.';
 
 // Doc messages
 const createSuccess = 'Document has been uploaded successfully.';
-const createFailure = 'Document not created. Try again?';
+const createFailure = 'You are missing required fields. Try again?';
 const downloadSuccess = 'Document has been downloaded successfully.';
 const updateSuccess = 'Document has been updated successfully.';
 const deleteSuccess = 'Document has been deleted successfully.';
