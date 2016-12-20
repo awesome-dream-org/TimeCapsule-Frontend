@@ -14,17 +14,24 @@ html, body {
 }
 
 // Title and description styles
-h1 {
+.header-text {
   margin: 20px;
+  padding: 20px;
   font-size: 50px;
   text-align: center;
   border-bottom: 1px solid #111;
+  animation: fade-in 2s;
 }
 
-h3 {
-  margin: 20px;
+.description {
+  opacity: 0;
+  width: 80%;
+  margin: 0 auto;
   font-size: 20px;
-  text-align: center;
+  line-height: 30px;
+  animation: fade-in 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 
 .header-title {
@@ -333,9 +340,26 @@ td.alt {
 };
 // END FILTER STYLES
 
-@media (max-width: 400px) {
+@media (min-width: 500px) {
   .file-names {
     width: 33.33%;
     float: none;
+  }
+
+  .description {
+    margin-top: 80px;
+    width: 50%;
+    line-height: 40px;
+  }
+}
+
+@keyframes fade-in {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
