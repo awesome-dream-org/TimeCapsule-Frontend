@@ -19,6 +19,8 @@ const createSuccess = 'Document has been uploaded successfully.';
 const downloadSuccess = 'Document has been downloaded successfully.';
 const updateSuccess = 'Document has been updated successfully.';
 const deleteSuccess = 'Document has been deleted successfully.';
+const noUserDocs = "You don't have any files. Please select 'Launch Page' from the nav bar to go back.";
+const noDocs = "There aren't currently any files. Please select 'Launch Page' from the nav bar to go back.";
 
 const userMessageElement = '#user-message';
 
@@ -48,4 +50,6 @@ module.exports = {
   downloadSuccess,
   updateSuccess,
   deleteSuccess,
+  noUserDocs,
+  noDocs,
 };

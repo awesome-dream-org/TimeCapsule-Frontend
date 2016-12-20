@@ -8,8 +8,8 @@ const msg = require('../common/user-messages.js');
 
 const showMyDocs = function(myFiles) {
   if (myFiles.docs.length < 1) {
-    let message = "You don't have any files. Please select 'Launch Page' from the nav bar to go back.";
-    $('#content').html(noFilesTemplate(message));
+    $('#content').html(noFilesTemplate());
+    msg.setUserMessage(msg.noUserDocs);
   } else {
     $('#content').html(myFilesTemplate(myFiles));
   }
@@ -28,8 +28,8 @@ const createDocSuccess = function() {
 
 const getAllDocsSuccess = function(allFiles) {
   if (allFiles.docs.length < 1) {
-    let message = "There aren't currently any files. Please select 'Launch Page' from the nav bar to go back.";
-    $('#content').html(noFilesTemplate(message));
+    $('#content').html(noFilesTemplate());
+    msg.setUserMessage(msg.noUserDocs);
   } else {
     $('#content').html(allFilesTemplate(allFiles));
   }
