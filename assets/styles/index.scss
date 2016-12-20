@@ -21,7 +21,7 @@ html, body {
   padding: 20px;
   font-size: 50px;
   text-align: center;
-  border-bottom: 1px solid #111;
+  // border-bottom: 1px solid #111;
   animation: fade-in 2s;
 }
 
@@ -56,6 +56,7 @@ html, body {
 hr {
   margin-top: 130px;
   border-bottom: 1px solid #111;
+  width: 100%;
 };
 
 // Sidebar and button styles
@@ -322,8 +323,8 @@ caption {
 //   text-decoration: underline;
 // };
 
-p {
-  padding-left: 100px;
+p.filter-table {
+  padding-left: 150px;
   padding-right: 10px;
   padding-bottom: 10px;
 };
