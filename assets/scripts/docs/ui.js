@@ -22,7 +22,8 @@ const showCreateDocForm = function() {
   $('#launch-page-nav').show();
 };
 
-const createDocSuccess = function() {
+const createDocSuccess = function(data) {
+  console.log("Doc data is ", data);
   msg.setUserMessage(msg.createSuccess);
 };
 
@@ -46,6 +47,10 @@ const updateDocSuccess = function() {
   msg.setUserMessage(msg.updateSuccess);
 };
 
+const updateDocInvalidTitle = function() {
+  msg.setUserMessage(msg.updateDocInvalidTitle);
+};
+
 const deleteDocSuccess = function() {
   msg.setUserMessage(msg.deleteSuccess);
 };
@@ -63,4 +68,5 @@ module.exports = {
   updateDocSuccess,
   deleteDocSuccess,
   failure,
+  updateDocInvalidTitle,
 };

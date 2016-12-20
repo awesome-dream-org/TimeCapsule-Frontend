@@ -3,12 +3,36 @@
 const api = require('./api');
 const ui = require('./ui');
 const catEvents = require('../categories/events.js');
+const catUI = require('../categories/ui.js');
+const catAPI = require('../categories/api.js');
+
+const onUpdateDoc = function(event) {
+  event.preventDefault();
+  let id = event.currentTarget.id.replace('update-', '');
+  let title = $('#title-' + id).val();
+  let category = $('#category-' + id).val();
+
+  if ($('#title-' + id).val()) {
+    api.updateDoc(id, title, category)
+      .then(ui.updateDocSuccess)
+      .catch(ui.failure);
+  } else {
+    ui.updateDocInvalidTitle();
+  }
+
+};
 
 const onMyFiles = function() {
   event.preventDefault();
   api.getAllMyDocs()
-    .then(ui.showMyDocs)
-    .catch(ui.failure);
+    .done(function(docsResult) {
+      ui.showMyDocs(docsResult);
+      catAPI.getAllCats()
+        .done(function(catsResult) {
+          catUI.updateCategorySelectMulti(docsResult.docs, catsResult.categories);
+        });
+    })
+    .fail(ui.failure);
 };
 
 const onGetAllFiles = function(event) {
@@ -60,6 +84,7 @@ const addHandlers = () => {
   $('#content').on('submit', '#create-document-form', onCreateDoc);
   $('#content').on('click', '.download-btn', onDownloadDoc);
   $('#content').on('click', '.delete-btn', onDeleteDoc);
+  $('#content').on('click', '.update-btn', onUpdateDoc);
 };
 
 module.exports = {
@@ -67,4 +92,5 @@ module.exports = {
   onCreateDoc,
   onDownloadDoc,
   onGetAllFiles,
+  onUpdateDoc,
 };

@@ -43,11 +43,16 @@ const createDoc = function(data) {
   });
 };
 
-const updateDoc = function(data) {
+const updateDoc = function(id, title, category) {
   return $.ajax({
-    url: config.host + '/docs/' + data.doc.id,
+    url: config.host + '/docs/' + id,
     method: 'PATCH',
-    data,
+    data: {
+      doc: {
+        title: title,
+        category: category,
+      },
+    },
     headers: {
       Authorization: 'Token token=' + store.user.token,
     },

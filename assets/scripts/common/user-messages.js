@@ -21,6 +21,7 @@ const updateSuccess = 'Document has been updated successfully.';
 const deleteSuccess = 'Document has been deleted successfully.';
 const noUserDocs = "You don't have any files. Please select 'Launch Page' from the nav bar to go back.";
 const noDocs = "There aren't currently any files. Please select 'Launch Page' from the nav bar to go back.";
+const updateDocInvalidTitle = "You can't have a blank title. Try again?";
 
 const userMessageElement = '#user-message';
 
@@ -52,4 +53,5 @@ module.exports = {
   deleteSuccess,
   noUserDocs,
   noDocs,
+  updateDocInvalidTitle,
 };
