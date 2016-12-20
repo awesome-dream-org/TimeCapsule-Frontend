@@ -32,12 +32,13 @@ const updateCategorySelect = function(data) {
 
 const updateCategorySelectMulti = function(docs, categories) {
   $('.category-list').each(function(itemNo, item) {
+    let categoryList = sortCategoryList(categories);
     let list = $(item)[0];
-    for (let i = 0; i < categories.length; i++) {
+    for (let i = 0; i < categoryList.length; i++) {
       list.options[list.options.length] =
         new Option(
-          categories[i].text,
-          categories[i].id);
+          categoryList[i].text,
+          categoryList[i].id);
     }
     $(item).append(list);
     $(item).val(docs[itemNo].category);
