@@ -27,6 +27,27 @@ h3 {
   text-align: center;
 }
 
+.header-title {
+  margin-top: 20px;
+  font-size: 50px;
+  float: right;
+  text-align: center;
+  width: 32%;
+};
+
+.header-user {
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+  float: right;
+  text-align: right;
+  width: 32%;
+};
+
+hr {
+  margin-top: 130px;
+  border-bottom: 1px solid #111;
+};
 
 // Sidebar and button styles
 #sidebar {
