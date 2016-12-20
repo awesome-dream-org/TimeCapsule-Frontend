@@ -30,7 +30,13 @@ const onMyFiles = function() {
       catAPI.getAllCats()
         .done(function(catsResult) {
           catUI.updateCategorySelectMulti(docsResult.docs, catsResult.categories);
+        })
+      .done(function() {
+        $('table').filterTable({
+          filterExpression: 'filterTableFindAny',
+          minRows: 0
         });
+      });
     })
     .fail(ui.failure);
 };
@@ -39,6 +45,12 @@ const onGetAllFiles = function(event) {
   event.preventDefault();
   api.getAllDocs()
     .then(ui.getAllDocsSuccess)
+    .then(()=>{
+      $('table').filterTable({
+        filterExpression: 'filterTableFindAny',
+        minRows: 0
+      });
+    })
     .catch(ui.failure);
 };
 
