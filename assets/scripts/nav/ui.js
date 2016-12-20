@@ -6,24 +6,28 @@ const signInTemplate = require('../templates/sign-in.handlebars');
 const changePasswordTemplate = require('../templates/change-password.handlebars');
 const launchTemplate = require('../templates/launch.handlebars');
 
-const showSignUpForm = function() {
+const showSignUpForm = function () {
+  msg.clearUserMessage();
   $('#content').html(signUpTemplate());
 };
 
-const showSignInForm = function() {
+const showSignInForm = function () {
+  msg.clearUserMessage();
   $('#content').html(signInTemplate());
 };
 
-const showChangePasswordForm = function() {
+const showChangePasswordForm = function () {
+  msg.clearUserMessage();
   $('#content').html(changePasswordTemplate());
 };
 
-const showLaunchPage = function() {
+const showLaunchPage = function () {
+  msg.clearUserMessage();
   $('#content').html(launchTemplate());
   $('#launch-page-nav').hide();
 };
 
-const failure = function() {
+const failure = function () {
   msg.setUserMessage(msg.genericFailure);
 };
 

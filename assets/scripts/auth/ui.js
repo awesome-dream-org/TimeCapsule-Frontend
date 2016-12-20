@@ -8,9 +8,10 @@ const msg = require('../common/user-messages.js');
 
 const signInSuccess = (data) => {
   store.user = data.user;
-  // load the launch page handlebars template
-  $('#content').html(launchTemplate());
-  // hiding/showing navbar items
+  let delay = 1000;
+  setTimeout(function () {
+    $('#content').html(launchTemplate());
+  }, delay);
   $('#change-password-nav').show();
   $('#sign-out-nav').show();
   $('#sign-up-nav').hide();
@@ -19,12 +20,13 @@ const signInSuccess = (data) => {
   msg.clearUserMessage();
 };
 
+const signInFailure = () => {
+  msg.setUserMessage(msg.invalidCredentials);
+};
+
 const signOutSuccess = () => {
-  // redirect user to the title page
   $('#content').html(titleTemplate());
-  // close the navbar
   $('#sidebar').toggleClass('visible');
-  // hiding/showing navbar items
   $('#change-password-nav').hide();
   $('#sign-out-nav').hide();
   $('#launch-page-nav').hide();
@@ -35,19 +37,22 @@ const signOutSuccess = () => {
 };
 
 const changePasswordSuccess = () => {
-  // redirect user to launch page
-  $('#content').html(launchTemplate());
+  let delay = 1000;
+  setTimeout(function () {
+    $('#content').html(launchTemplate());
+  }, delay);
   msg.setUserMessage(msg.changePasswordSuccess);
 };
 
 const signUpSuccess = () => {
-  // redirect user to Sign In form
-  $('#content').html(signInTemplate());
+  let delay = 1000;
+  setTimeout(function () {
+    $('#content').html(signInTemplate());
+  }, delay);
   msg.setUserMessage(msg.signUpSuccess);
 };
 
-const failure = (error) => {
-  console.error(error);
+const failure = () => {
   msg.setUserMessage(msg.genericError);
 };
 
@@ -57,4 +62,5 @@ module.exports = {
   signOutSuccess,
   changePasswordSuccess,
   signUpSuccess,
+  signInFailure,
 };

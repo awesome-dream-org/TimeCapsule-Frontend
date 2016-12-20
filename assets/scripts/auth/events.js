@@ -23,7 +23,7 @@ const matchingPasswords = (password1, password2) => {
   }
 };
 
-const onSignUp = function(event) {
+const onSignUp = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   if (validEmail(data.credentials.email) && matchingPasswords(data.credentials.password, data.credentials.password_confirmation)) {
@@ -33,23 +33,22 @@ const onSignUp = function(event) {
   }
 };
 
-const onSignIn = function(event) {
+const onSignIn = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signIn(data)
     .done(ui.signInSuccess)
-    .fail(ui.failure);
+    .fail(ui.signInFailure);
 };
 
-const onSignOut = function(event) {
+const onSignOut = function (event) {
   event.preventDefault();
-  // let data = getFormFields(event.target);
   api.signOut()
     .done(ui.signOutSuccess)
     .fail(ui.failure);
 };
 
-const onChangePassword = function(event) {
+const onChangePassword = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.changePassword(data)

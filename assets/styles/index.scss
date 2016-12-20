@@ -1,184 +1,192 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-html, body {
-	margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  display: table;
-	font-family: 'Nobile', sans-serif;
-  background: #F0F8FF;
-  background-size: cover;
+$desire: #d90429;
+$background: #f0f8ff;
+$black: #111;
+$dark-grey: #151718;
+$table-back-color: #1c1e1f;
+$grey: #ccc;
+$white: #fff;
+$slategrey: #708090;
+$green: #008000;
+$td-alt-background: rgba(255, 255, 0, .2);
+
+html,
+body {
+  background: $background;
   background-repeat: no-repeat;
-}
+  background-size: cover;
+  display: table;
+  font-family: 'Nobile', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+};
 
 // Title and description styles
 .header-text {
+  animation: fade-in 2s;
+  font-size: 50px;
   margin: 20px;
   padding: 20px;
-  font-size: 50px;
   text-align: center;
-  border-bottom: 1px solid #111;
-  animation: fade-in 2s;
-}
+};
 
 .description {
-  opacity: 0;
-  width: 80%;
-  margin: 0 auto;
-  font-size: 20px;
-  line-height: 30px;
   animation: fade-in 2s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
-}
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0 auto;
+  opacity: 0;
+  width: 80%;
+};
 
 .header-title {
-  margin-top: 20px;
-  font-size: 50px;
   float: right;
+  font-size: 50px;
+  margin-top: 20px;
   text-align: center;
   width: 32%;
 };
 
 .header-user {
-  margin-top: 20px;
-  margin-right: 20px;
-  font-size: 20px;
   float: right;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
   text-align: right;
   width: 32%;
 };
 
 hr {
+  border-bottom: 1px solid $black;
   margin-top: 130px;
-  border-bottom: 1px solid #111;
+  width: 100%;
 };
 
 // Sidebar and button styles
 #sidebar {
-  background: #151718;
-  width: 200px;
-  height: 100%;
+  background: $dark-grey;
   display: block;
-  position: absolute;
+  height: 100%;
   left: -200px;
-  top: 0px;
-  transition: left 0.3s linear;
+  position: absolute;
+  top: 0;
+  transition: left .3s linear;
+  width: 200px;
   z-index: 1;
-}
+};
 
 #sidebar.visible {
-  left: 0px;
-  transition: left 0.3s linear;
-}
+  left: 0;
+  transition: left .3s linear;
+};
 
 ul {
-  margin: 0px;
-  padding: 0px;
-}
+  margin: 0;
+  padding: 0;
+};
 
 ul li {
   list-style: none;
-}
+};
 
 ul li a {
-  background: #1C1E1F;
-  color: #CCC;
-  border-bottom: 1px solid #111;
+  background: $table-back-color;
+  border-bottom: 1px solid $black;
+  color: $grey;
   display: block;
-  width: 180px;
   padding: 10px;
-}
+  width: 180px;
+};
 
 a {
-	cursor: pointer;
+  cursor: pointer;
 };
 
 #sidebar-btn {
-  display: inline-block;
-  vertical-align: middle;
-  width: 20px;
-  height: 15px;
   cursor: pointer;
+  display: inline-block;
+  height: 15px;
   margin: 20px;
   position: absolute;
-  top: 0px;
   right: -60px;
-}
+  top: 0;
+  vertical-align: middle;
+  width: 20px;
+};
 
 // Span tag styles for the stair look
 #sidebar-btn span {
-  height: 1px;
-  background: #111;
-  margin-bottom: 5px;
+  background: $black;
   display: block;
-}
+  height: 1px;
+  margin-bottom: 5px;
+};
 
-#sidebar-btn span:nth-child(2){
+#sidebar-btn span:nth-child(2) {
   width: 75%;
-}
+};
 
-#sidebar-btn span:nth-child(3){
+#sidebar-btn span:nth-child(3) {
   width: 50%;
-}
+};
 
 // Authentication views and there styles
 
 form {
   position: relative;
   transition: .5s;
-}
+};
 
 .header-sign-up {
   text-align: center;
-}
+};
 
 .sign-up {
-// display: none;
-width: 100%;
-max-width: 400px;
-margin: 0 auto;
-}
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+};
 
 .header-sign-in {
   text-align: center;
-}
+};
 
 .sign-in {
-  // display: none;
-  width: 100%;
-  max-width: 400px;
   margin: 0 auto;
-}
+  max-width: 400px;
+  width: 100%;
+};
 
 .header-change-password {
   text-align: center;
-}
+};
 
 .change-password {
-  // display: none;
-  width: 100%;
-  max-width: 400px;
   margin: 0 auto;
-}
+  max-width: 400px;
+  width: 100%;
+};
 
 .sign-out {
-  // display: none;
-  width: 100%;
-  max-width: 400px;
   margin: 0 auto;
-}
+  max-width: 400px;
+  width: 100%;
+};
 
 .input {
+  box-sizing: border-box;
+  font-family: 'Nobile', sans-serif;
+  font-size: 20px;
   margin: 20px 5%;
   padding: 10px;
   width: 90%;
-  font-size: 20px;
-  font-family: 'Nobile', sans-serif;
-  box-sizing: border-box;
-}
+};
 
 .input:focus {
   outline: none;
@@ -186,82 +194,82 @@ margin: 0 auto;
 // Button styles for authentication
 
 #btn-one {
-    background: black;
-    color: white;
-    display: block;
-    width: 90%;
-    float: right;
-    margin: -9px 5%;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    font-family: 'Nobile', sans-serif;
-}
-
-#btn-two {
-  background: black;
-  color: white;
+  background: $black;
+  color: $white;
+  cursor: pointer;
   display: block;
-  width: 90%;
   float: right;
+  font-family: 'Nobile', sans-serif;
+  font-size: 20px;
   margin: -9px 5%;
   padding: 10px;
-  font-size: 20px;
+  width: 90%;
+};
+
+#btn-two {
+  background: $black;
+  color: $white;
   cursor: pointer;
+  display: block;
+  float: right;
   font-family: 'Nobile', sans-serif;
+  font-size: 20px;
+  margin: -9px 5%;
+  padding: 10px;
+  width: 90%;
 }
 
 #btn-three {
-  background: black;
-  color: white;
+  background: $black;
+  color: $white;
+  cursor: pointer;
   display: block;
-  width: 90%;
   float: right;
+  font-family: 'Nobile', sans-serif;
+  font-size: 20px;
   margin: -9px 5%;
   padding: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  font-family: 'Nobile', sans-serif;
+  width: 90%;
 }
 
 // Styles for the footer
 
 .wrapper {
-  padding: 20px;
   height: auto;
+  padding: 20px;
   text-align: center;
-}
+};
 
 footer {
-  background-color: slategrey;
+  background-color: $slategrey;
   display: table-row;
   height: 35px;
-}
+};
 
 // Buldge animation for on submit form fields
 .buldge {
   transform: scale(1.1);
-}
+};
 
 // Image button styling
 
 .file {
-  width: 100%;
-  max-width: 500px;
   float: left;
-}
+  max-width: 500px;
+  width: 100%;
+};
 
 file:hover {
-  color: green;
-}
+  color: $green;
+};
 
 .file-names {
   display: inline-block;
   float: left;
-  width: 33.33%;
   font-size: 25px;
   margin-top: -25px;
-}
+  width: 33.33%;
+};
 
 
 
@@ -269,61 +277,60 @@ file:hover {
 
 // File table styling
 
-.file-table-one, .file-table-two  {
-    width: 80%;
-    margin: 0 auto;
-    height: 335px;
-    overflow: auto;
-}
+.file-table-one,
+.file-table-two {
+  height: 335px;
+  margin: 0 auto;
+  overflow: auto;
+  width: 80%;
+};
 
-table, th, td {
-  margin: 30px auto;
-  background-color: slategrey;
-  border: 2px solid black;
+table,
+th,
+td {
+  background-color: $slategrey;
+  border: 2px solid $black;
   border-collapse: collapse;
-}
+  margin: 30px auto;
+  padding: 5px;
+};
 
 tr {
-  color: black;
-  text-align: center
-}
+  color: $black;
+  text-align: center;
+};
 
 th {
-  background-color: black;
-  color: white;
-	text-align: center;
-}
+  background-color: $black;
+  color: $white;
+  text-align: center;
+};
 
 caption {
-  margin: 20px;
   font-size: 30px;
-}
+  margin: 20px;
+};
 
 .upload-file {
-  max-width: 80%;
-  width: 500px;
+  background-color: $slategrey;
   margin: 0 auto;
+  max-width: 80%;
   text-align: center;
-  background-color: slategrey;
-}
+  width: 500px;
+};
 
 // START FILTER STYLES
 .filter-table .quick {
   margin: 0 auto;
-  // font-size: 0.8em;
-  text-decoration: none;
   text-align: center;
+  text-decoration: none;
   width: 80%;
 };
 
-// .filter-table .quick:hover {
-//   text-decoration: underline;
-// };
-
-p {
-  padding-left: 100px;
-  padding-right: 10px;
+p.filter-table {
   padding-bottom: 10px;
+  padding-left: 150px;
+  padding-right: 10px;
 };
 
 input[type=search] {
@@ -331,27 +338,26 @@ input[type=search] {
 };
 
 td.alt {
-  background-color: #ffc;
-  background-color: rgba(255, 255, 0, 0.2);
+  background-color: $td-alt-background;
 };
 
 .hidden-text {
-	display: none;
+  display: none;
 };
 // END FILTER STYLES
 
 @media (min-width: 500px) {
   .file-names {
-    width: 18.33%;
     float: none;
+  	width: 18.33%;
   }
 
   .description {
-    margin-top: 80px;
+  	line-height: 40px;
+  	margin-top: 80px;
     width: 50%;
-    line-height: 40px;
   }
-}
+};
 
 @keyframes fade-in {
 
@@ -363,3 +369,11 @@ td.alt {
     opacity: 1;
   }
 }
+
+.user-message {
+  color: $desire;
+  font-weight: bold;
+  margin: 0 auto;
+  max-width: 36%;
+  text-align: center;
+};

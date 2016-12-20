@@ -13,6 +13,8 @@ The Time Capsule app is a collection of user uploaded documents.  The purpose of
 - Sports
 - Technology
 - Cats
+- Other
+
 Files are uploaded to AWS and metadata is stored in a Mongo back-end.  Users can download the files from all users, but only have the ability to update and delete the files they've uploaded.
 
 ---
@@ -20,10 +22,10 @@ Files are uploaded to AWS and metadata is stored in a Mongo back-end.  Users can
 ## Links
 
 The front-end is deployed here:<br>
-TBD
+https://awesome-dream-org.github.io/TimeCapsule-Frontend
 
 The back-end is deployed here:<br>
-TBD
+https://sheltered-taiga-22202.herokuapp.com
 
 The front-end repo can be found here:<br>
 https://github.com/awesome-dream-org/TimeCapsule-Frontend
@@ -41,11 +43,13 @@ https://github.com/awesome-dream-org/TimeCapsule-Backend
 **Version Control -** git <br>
 **Deployments -** gh-pages (front-end) and Heroku (back-end)
 
-### Dependencies
+### Dependencies / Install Instructions
 The below node modules were used when developing the back-end.  They will all be installed when running ```npm install``` after forking/cloning our back-end repo.
 - aws-sdk
 - mime
 - multer
+
+On the frontend, the jQuery filtertable plug-in was used. To install this we placed the jquery.filtertable.min.js file into our repo and required it within index.js.
 
 ---
 
@@ -63,7 +67,8 @@ We developed our user stories within Trello:<br>
 https://trello.com/b/ofciPisR/group-board
 
 ### Wireframes and ERD
-TBD - need links
+Wireframes - http://imgur.com/a/QH5uc <br>
+ERD - http://imgur.com/a/EwX5j
 
 ### GIT Strategy
 We created a dev branch and a series of feature branches.  We tried to ensure that only one person was working on a feature branch at a time to avoid conflicts.  We worked together as a group to run through all merges, resolve merge conflicts and do initial testing/bug fixes after each.  We followed the strategy of merging features into dev as they were completed, the rebasing our feature branches with the new dev branch.
@@ -72,13 +77,22 @@ We created a dev branch and a series of feature branches.  We tried to ensure th
 We shared coding responsiblities, but each had a specific role to play as well.
 - **Brandon -** Front-End Lead - Has the final say regarding front-end decisions.
 - **Caleb -** Back-End Lead - Has the final say regarding back-end decisions.
-- **Kosta -** Scrum Master/QA - Leads scrum meetings and performs QA for git related activities.  Responsible for heroku deployment.
-- **Kara -** Team Lead - Organize team activities, take notes during meetings
+- **Kosta -** Scrum Master/QA - Leads scrum meetings and performs QA for git related activities.  Responsible for gh-pages and heroku deployment.
+- **Kara -** Team Lead - Big picture/oversight.  Coordinate across leads.  Organize team activities, take notes during meetings.
+
+---
+
+## Major Hurdles
+The team had to overcome the following challenges:
+- Complex merge conflicts.
+- Heroku / mlab deployments.
 
 ---
 
 ## Future Enhancements
-TBD
+- Collaboration feature to grant users access.
+- Additional styling / polish to UI.
+- Expanded meta-data / attributes for documents.
 
 ---
 
