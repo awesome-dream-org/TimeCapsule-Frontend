@@ -19,6 +19,7 @@ const showChangePasswordForm = function() {
 };
 
 const showLaunchPage = function() {
+  msg.clearUserMessage();
   $('#content').html(launchTemplate());
   $('#launch-page-nav').hide();
 };

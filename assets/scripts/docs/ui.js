@@ -11,6 +11,7 @@ const showMyDocs = function(myFiles) {
     $('#content').html(noFilesTemplate());
     msg.setUserMessage(msg.noUserDocs);
   } else {
+    msg.clearUserMessage();
     $('#content').html(myFilesTemplate(myFiles));
   }
 
@@ -20,6 +21,7 @@ const showMyDocs = function(myFiles) {
 const showCreateDocForm = function() {
   $('#content').html(uploadFileTemplate());
   $('#launch-page-nav').show();
+  msg.clearUserMessage();
 };
 
 const createDocSuccess = function(data) {
@@ -32,6 +34,7 @@ const getAllDocsSuccess = function(allFiles) {
     $('#content').html(noFilesTemplate());
     msg.setUserMessage(msg.noUserDocs);
   } else {
+    msg.clearUserMessage();
     $('#content').html(allFilesTemplate(allFiles));
   }
 
