@@ -11,8 +11,7 @@ const signUpSuccess = 'You have successfully signed up. Please log-in with your 
 const invalidCredentials = 'The username or password you entered is incorrect. Try again?';
 const invalidCurrentPassword = 'Your current password is incorrect. Try again?';
 const signOutSuccess = 'You have successfully signed out.';
-const changePasswordSuccess = 'You have successfully changed your password. ' +
-  'Please log-in with your new credentials.';
+const changePasswordSuccess = 'You have successfully changed your password.';
 
 // Doc messages
 const createSuccess = 'Document has been uploaded successfully.';
