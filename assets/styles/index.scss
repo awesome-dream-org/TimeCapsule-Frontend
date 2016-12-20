@@ -367,9 +367,9 @@ td.alt {
 }
 
 .user-message {
+  max-width: 36%;
+  margin: 0 auto;
   color: $desire;
   font-weight: bold;
-  padding-bottom: 2em;
-  padding-top: .5em;
   text-align: center;
 }
