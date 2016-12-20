@@ -29,6 +29,10 @@ const createDocSuccess = function(data) {
   msg.setUserMessage(msg.createSuccess);
 };
 
+const createDocFailure = function() {
+  msg.setUserMessage(msg.createFailure);
+};
+
 const getAllDocsSuccess = function(allFiles) {
   if (allFiles.docs.length < 1) {
     $('#content').html(noFilesTemplate());
@@ -72,4 +76,5 @@ module.exports = {
   deleteDocSuccess,
   failure,
   updateDocInvalidTitle,
+  createDocFailure,
 };

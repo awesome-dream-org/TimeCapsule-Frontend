@@ -67,7 +67,7 @@ const onCreateDoc = function(event) {
   let data = new FormData(event.target);
   api.createDoc(data)
     .then(ui.createDocSuccess)
-    .catch(ui.failure);
+    .catch(ui.createDocFailure);
 };
 
 const onDownloadDoc = function(event) {
