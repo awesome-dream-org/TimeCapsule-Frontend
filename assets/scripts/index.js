@@ -15,6 +15,7 @@ $(() => {
   $('#sign-out-nav').hide();
   $('#launch-page-nav').hide();
   $('#sidebar').toggleClass('visible');
+  // $('#dummy-table').dataTable();
 });
 
 $('form').on('submit', function() {
