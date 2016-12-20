@@ -3,30 +3,30 @@
 const ui = require('./ui');
 
 // Open the side bar
-const onSideBarBtn = function() {
+const onSideBarBtn = function () {
   $('#sidebar').toggleClass('visible');
 };
 
 // Sign up link from nav bar
-const onSignUpLink = function() {
+const onSignUpLink = function () {
   ui.showSignUpForm();
   $('#sidebar').toggleClass('visible');
 };
 
 // Sign in link from nav bar
-const onSignInLink = function() {
+const onSignInLink = function () {
   ui.showSignInForm();
   $('#sidebar').toggleClass('visible');
 };
 
 // Change PW on nav bar
-const onChangePasswordLink = function() {
+const onChangePasswordLink = function () {
   ui.showChangePasswordForm();
   $('#sidebar').toggleClass('visible');
 };
 
 // Allows user to get back to the launch page from within navbar
-const onLaunchPage = function() {
+const onLaunchPage = function () {
   ui.showLaunchPage();
   $('#sidebar').toggleClass('visible');
 };

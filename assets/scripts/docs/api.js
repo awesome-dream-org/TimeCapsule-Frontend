@@ -3,7 +3,7 @@
 const store = require('../store.js');
 const config = require('../config.js');
 
-const getAllDocs = function() {
+const getAllDocs = function () {
   return $.ajax({
     url: config.host + '/docs',
     method: 'GET',
@@ -13,7 +13,7 @@ const getAllDocs = function() {
   });
 };
 
-const getAllMyDocs = function() {
+const getAllMyDocs = function () {
   return $.ajax({
     url: config.host + '/docs/?restrict=true',
     method: 'GET',
@@ -23,14 +23,14 @@ const getAllMyDocs = function() {
   });
 };
 
-const getDoc = function(id) {
+const getDoc = function (id) {
   return $.ajax({
     url: config.host + '/docs/' + id,
     method: 'GET',
   });
 };
 
-const createDoc = function(data) {
+const createDoc = function (data) {
   return $.ajax({
     url: config.host + '/docs',
     method: 'POST',
@@ -43,7 +43,7 @@ const createDoc = function(data) {
   });
 };
 
-const updateDoc = function(id, title, category) {
+const updateDoc = function (id, title, category) {
   return $.ajax({
     url: config.host + '/docs/' + id,
     method: 'PATCH',
@@ -59,7 +59,7 @@ const updateDoc = function(id, title, category) {
   });
 };
 
-const deleteDoc = function(id) {
+const deleteDoc = function (id) {
   return $.ajax({
     url: config.host + '/docs/' + id,
     method: 'DELETE',

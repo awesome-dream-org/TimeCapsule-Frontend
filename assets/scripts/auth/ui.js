@@ -8,12 +8,10 @@ const msg = require('../common/user-messages.js');
 
 const signInSuccess = (data) => {
   store.user = data.user;
-  // load the launch page handlebars template
-  let delay = 1000; //1 second
-  setTimeout(function() {
+  let delay = 1000;
+  setTimeout(function () {
     $('#content').html(launchTemplate());
   }, delay);
-  // hiding/showing navbar items
   $('#change-password-nav').show();
   $('#sign-out-nav').show();
   $('#sign-up-nav').hide();
@@ -27,11 +25,8 @@ const signInFailure = () => {
 };
 
 const signOutSuccess = () => {
-  // redirect user to the title page
   $('#content').html(titleTemplate());
-  // close the navbar
   $('#sidebar').toggleClass('visible');
-  // hiding/showing navbar items
   $('#change-password-nav').hide();
   $('#sign-out-nav').hide();
   $('#launch-page-nav').hide();
@@ -42,25 +37,22 @@ const signOutSuccess = () => {
 };
 
 const changePasswordSuccess = () => {
-  // redirect user to launch page
-  let delay = 1000; //1 second
-  setTimeout(function() {
+  let delay = 1000;
+  setTimeout(function () {
     $('#content').html(launchTemplate());
   }, delay);
   msg.setUserMessage(msg.changePasswordSuccess);
 };
 
 const signUpSuccess = () => {
-  // redirect user to Sign In form
-  let delay = 1000; //1 second
-  setTimeout(function() {
+  let delay = 1000;
+  setTimeout(function () {
     $('#content').html(signInTemplate());
   }, delay);
   msg.setUserMessage(msg.signUpSuccess);
 };
 
-const failure = (error) => {
-  console.error(error);
+const failure = () => {
   msg.setUserMessage(msg.genericError);
 };
 

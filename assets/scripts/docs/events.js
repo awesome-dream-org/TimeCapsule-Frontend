@@ -6,26 +6,26 @@ const catEvents = require('../categories/events.js');
 const catUI = require('../categories/ui.js');
 const catAPI = require('../categories/api.js');
 
-const onMyFiles = function() {
+const onMyFiles = function () {
   event.preventDefault();
   api.getAllMyDocs()
-    .done(function(docsResult) {
+    .done(function (docsResult) {
       ui.showMyDocs(docsResult);
       catAPI.getAllCats()
-        .done(function(catsResult) {
+        .done(function (catsResult) {
           catUI.updateCategorySelectMulti(docsResult.docs, catsResult.categories);
         })
-      .done(function() {
-        $('table').filterTable({
-          filterExpression: 'filterTableFindAny',
-          minRows: 0
+        .done(function () {
+          $('table').filterTable({
+            filterExpression: 'filterTableFindAny',
+            minRows: 0,
+          });
         });
-      });
     })
     .fail(ui.failure);
 };
 
-const onUpdateDoc = function(event) {
+const onUpdateDoc = function (event) {
   event.preventDefault();
   let id = event.currentTarget.id.replace('update-', '');
   let title = $('#title-' + id).val();
@@ -33,7 +33,7 @@ const onUpdateDoc = function(event) {
 
   if ($('#title-' + id).val()) {
     api.updateDoc(id, title, category)
-      .done(function() {
+      .done(function () {
         ui.updateDocSuccess();
         onMyFiles();
       })
@@ -43,26 +43,26 @@ const onUpdateDoc = function(event) {
   }
 };
 
-const onGetAllFiles = function(event) {
+const onGetAllFiles = function (event) {
   event.preventDefault();
   api.getAllDocs()
     .then(ui.getAllDocsSuccess)
-    .then(()=>{
+    .then(() => {
       $('table').filterTable({
         filterExpression: 'filterTableFindAny',
-        minRows: 0
+        minRows: 0,
       });
     })
     .catch(ui.failure);
 };
 
-const onUploadFile = function(event) {
+const onUploadFile = function (event) {
   event.preventDefault();
   ui.showCreateDocForm();
   catEvents.onGetAllCats(event);
 };
 
-const onCreateDoc = function(event) {
+const onCreateDoc = function (event) {
   event.preventDefault();
   let data = new FormData(event.target);
   if ($('#doc-title').val() && $('#select-category').val() && $('#doc-file').val()) {
@@ -74,7 +74,7 @@ const onCreateDoc = function(event) {
   }
 };
 
-const onDownloadDoc = function(event) {
+const onDownloadDoc = function (event) {
   event.preventDefault();
   let id = event.currentTarget.id.replace('download-', '');
   api.getDoc(id)
@@ -82,13 +82,13 @@ const onDownloadDoc = function(event) {
     .catch(ui.failure);
 };
 
-const onDeleteDoc = function(event) {
+const onDeleteDoc = function (event) {
   event.preventDefault();
   let id = event.currentTarget.id.replace('delete-', '');
   api.deleteDoc(id)
-    .done(function() {
+    .done(function () {
       api.getAllMyDocs()
-        .done(function() {
+        .done(function () {
           ui.updateDocSuccess();
           onMyFiles();
         })
