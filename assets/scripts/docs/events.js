@@ -3,8 +3,10 @@
 const api = require('./api');
 const ui = require('./ui');
 const catEvents = require('../categories/events.js');
+const catUI = require('../categories/ui.js');
+const catAPI = require('../categories/api.js');
 
-const onUpdateDoc = function(event){
+const onUpdateDoc = function(event) {
   event.preventDefault();
   let id = event.currentTarget.id.replace('update-', '');
   let title = $('#title-' + id).val();
@@ -23,8 +25,14 @@ const onUpdateDoc = function(event){
 const onMyFiles = function() {
   event.preventDefault();
   api.getAllMyDocs()
-    .then(ui.showMyDocs)
-    .catch(ui.failure);
+    .done(function(docsResult) {
+      ui.showMyDocs(docsResult);
+      catAPI.getAllCats()
+        .done(function(catsResult) {
+          catUI.updateCategorySelectMulti(docsResult.docs, catsResult.categories);
+        });
+    })
+    .fail(ui.failure);
 };
 
 const onGetAllFiles = function(event) {
