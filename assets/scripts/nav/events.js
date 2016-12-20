@@ -10,40 +10,25 @@ const onSideBarBtn = function() {
 // Sign up link from nav bar
 const onSignUpLink = function() {
   ui.showSignUpForm();
-  // $('.frame').hide();
-  // $('.sign-up').show();
   $('#sidebar').toggleClass('visible');
-  $('.launch').hide();
-  $('.file-table-one').hide();
-  $('.file-table-two').hide();
 };
 
 // Sign in link from nav bar
 const onSignInLink = function() {
   ui.showSignInForm();
-  // $('.frame').hide();
-  // $('.sign-in').show();
   $('#sidebar').toggleClass('visible');
-  $('.launch').hide();
-  $('.file-table-one').hide();
-  $('.file-table-two').hide();
 };
 
 // Change PW on nav bar
 const onChangePasswordLink = function() {
   ui.showChangePasswordForm();
-  // $('.frame').hide();
-  // $('.change-password').show();
   $('#sidebar').toggleClass('visible');
-  $('.launch').hide();
-  $('.file-table-one').hide();
-  $('.file-table-two').hide();
-  $('.description').hide();
 };
 
 // Allows user to get back to the launch page from within navbar
 const onLaunchPage = function() {
   ui.showLaunchPage();
+  $('#sidebar').toggleClass('visible');
 };
 
 const addHandlers = () => {

@@ -1,8 +1,10 @@
 'use strict';
 
+const app = require('../config.js');
+
 const getAllCats = function() {
   return $.ajax({
-    url: 'https://sheltered-taiga-22202.herokuapp.com/categories',
+    url: app.host + '/categories',
     method: 'GET',
   });
 };

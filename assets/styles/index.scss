@@ -14,19 +14,47 @@ html, body {
 }
 
 // Title and description styles
-h1 {
+.header-text {
   margin: 20px;
+  padding: 20px;
   font-size: 50px;
   text-align: center;
   border-bottom: 1px solid #111;
+  animation: fade-in 2s;
 }
 
-h3 {
-  margin: 20px;
+.description {
+  opacity: 0;
+  width: 80%;
+  margin: 0 auto;
   font-size: 20px;
-  text-align: center;
+  line-height: 30px;
+  animation: fade-in 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 
+.header-title {
+  margin-top: 20px;
+  font-size: 50px;
+  float: right;
+  text-align: center;
+  width: 32%;
+};
+
+.header-user {
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+  float: right;
+  text-align: right;
+  width: 32%;
+};
+
+hr {
+  margin-top: 130px;
+  border-bottom: 1px solid #111;
+};
 
 // Sidebar and button styles
 #sidebar {
@@ -63,6 +91,10 @@ ul li a {
   width: 180px;
   padding: 10px;
 }
+
+a {
+	cursor: pointer;
+};
 
 #sidebar-btn {
   display: inline-block;
@@ -235,9 +267,6 @@ file:hover {
 
 // Hide launch page styling
 
-.launch {
-  // display: none;
-}
 // File table styling
 
 .file-table-one, .file-table-two  {
@@ -262,6 +291,7 @@ tr {
 th {
   background-color: black;
   color: white;
+	text-align: center;
 }
 
 caption {
@@ -269,9 +299,67 @@ caption {
   font-size: 30px;
 }
 
-@media (max-width: 400px) {
+.upload-file {
+  max-width: 80%;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: slategrey;
+}
+
+// START FILTER STYLES
+.filter-table .quick {
+  margin: 0 auto;
+  // font-size: 0.8em;
+  text-decoration: none;
+  text-align: center;
+  width: 80%;
+};
+
+// .filter-table .quick:hover {
+//   text-decoration: underline;
+// };
+
+p {
+  padding-left: 100px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+};
+
+input[type=search] {
+  padding-left: 5px;
+};
+
+td.alt {
+  background-color: #ffc;
+  background-color: rgba(255, 255, 0, 0.2);
+};
+
+.hidden-text {
+	display: none;
+};
+// END FILTER STYLES
+
+@media (min-width: 500px) {
   .file-names {
-    width: 33.33%;
+    width: 18.33%;
     float: none;
+  }
+
+  .description {
+    margin-top: 80px;
+    width: 50%;
+    line-height: 40px;
+  }
+}
+
+@keyframes fade-in {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

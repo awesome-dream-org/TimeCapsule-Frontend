@@ -3,10 +3,17 @@
 const myFilesTemplate = require('../templates/my-files.handlebars');
 const allFilesTemplate = require('../templates/all-files.handlebars');
 const uploadFileTemplate = require('../templates/upload-file.handlebars');
+const noFilesTemplate = require('../templates/no-files.handlebars');
 const msg = require('../common/user-messages.js');
 
 const showMyDocs = function(myFiles) {
-  $('#content').html(myFilesTemplate(myFiles));
+  if (myFiles.docs.length < 1) {
+    $('#content').html(noFilesTemplate());
+    msg.setUserMessage(msg.noUserDocs);
+  } else {
+    $('#content').html(myFilesTemplate(myFiles));
+  }
+
   $('#launch-page-nav').show();
 };
 
@@ -15,12 +22,19 @@ const showCreateDocForm = function() {
   $('#launch-page-nav').show();
 };
 
-const createDocSuccess = function() {
+const createDocSuccess = function(data) {
+  console.log("Doc data is ", data);
   msg.setUserMessage(msg.createSuccess);
 };
 
 const getAllDocsSuccess = function(allFiles) {
-  $('#content').html(allFilesTemplate(allFiles));
+  if (allFiles.docs.length < 1) {
+    $('#content').html(noFilesTemplate());
+    msg.setUserMessage(msg.noUserDocs);
+  } else {
+    $('#content').html(allFilesTemplate(allFiles));
+  }
+
   $('#launch-page-nav').show();
 };
 
@@ -31,6 +45,10 @@ const getDocSuccess = function(data) {
 
 const updateDocSuccess = function() {
   msg.setUserMessage(msg.updateSuccess);
+};
+
+const updateDocInvalidTitle = function() {
+  msg.setUserMessage(msg.updateDocInvalidTitle);
 };
 
 const deleteDocSuccess = function() {
@@ -50,4 +68,5 @@ module.exports = {
   updateDocSuccess,
   deleteDocSuccess,
   failure,
+  updateDocInvalidTitle,
 };
