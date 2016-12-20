@@ -5,6 +5,9 @@ const authEvents = require('./auth/events.js');
 const navEvents = require('./nav/events.js');
 const docEvents = require('./docs/events.js');
 const titleTemplate = require('./templates/title.handlebars');
+const signUpTemplate = require('./templates/sign-up.handlebars');
+const signInTemplate = require('./templates/sign-in.handlebars');
+const changePassWordTemplate = require('./templates/change-password.handlebars');
 
 $(() => {
   $('#content').html(titleTemplate);
@@ -18,10 +21,47 @@ $(() => {
   // $('#dummy-table').dataTable();
 });
 
-$('form').on('submit', function() {
-  $(this).addClass('buldge');
+// Go to manage my files
+$(".one").click(function() {
+  $('.launch').hide();
+  $('.file-table-one').show();
+  $('.file-table-two').hide();
+  $('.description').hide();
+});
+
+// Go to view all files
+$(".two").click(function() {
+  $('.launch').hide();
+  $('.file-table-two').show();
+  $('.file-table-one').hide();
+  $('.description').hide();
+});
+
+// NO EVENT HANDLER EVENT YET FOR CREATE
+
+$(signUpTemplate).on('submit', function() {
+  console.log('Works');
+  $('form').addClass('buldge');
   let self = this;
   setTimeout(function() {
-    $(self).removeClass('buldge');
+    $('form').removeClass('buldge');
+  }, 250);
+});
+
+$(signInTemplate).on('submit', function() {
+  console.log('Works');
+  $('form').addClass('buldge');
+  let self = this;
+  setTimeout(function() {
+    $('form').removeClass('buldge');
+  }, 250);
+});
+
+$(changePassWordTemplate).on('submit', function() {
+  console.log('Works');
+  $('form').addClass('buldge');
+  let self = this;
+  setTimeout(function() {
+    $('form').removeClass('buldge');
   }, 250);
 });
