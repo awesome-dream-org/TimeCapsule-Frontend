@@ -1,12 +1,14 @@
 <article>
   <div class="filter-table">
     <table class="file-table-two">
-      <tr>
-        <th>File Name</th>
-        <th>Category</th>
-        <th>Date Created</th>
-        <th>Download</th>
-      </tr>
+      <thead>
+        <tr>
+          <th>File Name</th>
+          <th>Category</th>
+          <th>Date Created</th>
+          <th>Download</th>
+        </tr>
+      </thead>
       {{#each docs as |doc|}}
         <tr>
           <td>{{doc.title}}</td>
