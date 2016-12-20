@@ -15,6 +15,7 @@ const signInSuccess = (data) => {
   $('#sign-out-nav').show();
   $('#sign-up-nav').hide();
   $('#sign-in-nav').hide();
+  $('.header-user').text('Welcome ' + data.user.email);
   msg.clearUserMessage();
 };
 
@@ -29,6 +30,7 @@ const signOutSuccess = () => {
   $('#launch-page-nav').hide();
   $('#sign-up-nav').show();
   $('#sign-in-nav').show();
+  $('.header-user').text('');
   msg.setUserMessage(msg.signOutSuccess);
 };
 
