@@ -27,6 +27,7 @@ const showCreateDocForm = function() {
 const createDocSuccess = function(data) {
   console.log("Doc data is ", data);
   msg.setUserMessage(msg.createSuccess);
+  $('#create-document-form').trigger('reset');
 };
 
 const createDocFailure = function() {
