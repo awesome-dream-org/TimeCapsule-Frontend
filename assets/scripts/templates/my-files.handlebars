@@ -6,7 +6,6 @@
         <th>File Name</th>
         <th>Category</th>
         <th>Date Created</th>
-        <th>Date Modified</th>
         <th>Download</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -15,8 +14,7 @@
         <tr>
           <td>{{doc.title}}</td>
           <td>{{doc.category}}</td>
-          <td>{{doc.createdAt}}</td>
-          <td>{{doc.updatedAt}}</td>
+          <td>{{doc.filterDate}}</td>
           <td>
             <button class="download-btn btn btn-primary btn-lg" id="download-{{doc._id}}" type="button">
               <span class="glyphicon glyphicon-download-alt"></span>
