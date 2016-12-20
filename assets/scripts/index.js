@@ -37,8 +37,6 @@ $(".two").click(function() {
   $('.description').hide();
 });
 
-// NO EVENT HANDLER EVENT YET FOR CREATE
-
 $(signUpTemplate).on('submit', function() {
   $('form').addClass('buldge');
   setTimeout(function() {

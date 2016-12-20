@@ -9,7 +9,10 @@ const msg = require('../common/user-messages.js');
 const signInSuccess = (data) => {
   store.user = data.user;
   // load the launch page handlebars template
-  $('#content').html(launchTemplate());
+  let delay = 1000; //1 second
+  setTimeout(function() {
+    $('#content').html(launchTemplate());
+  }, delay);
   // hiding/showing navbar items
   $('#change-password-nav').show();
   $('#sign-out-nav').show();
@@ -40,13 +43,19 @@ const signOutSuccess = () => {
 
 const changePasswordSuccess = () => {
   // redirect user to launch page
-  $('#content').html(launchTemplate());
+  let delay = 1000; //1 second
+  setTimeout(function() {
+    $('#content').html(launchTemplate());
+  }, delay);
   msg.setUserMessage(msg.changePasswordSuccess);
 };
 
 const signUpSuccess = () => {
   // redirect user to Sign In form
-  $('#content').html(signInTemplate());
+  let delay = 1000; //1 second
+  setTimeout(function() {
+    $('#content').html(signInTemplate());
+  }, delay);
   msg.setUserMessage(msg.signUpSuccess);
 };
 
