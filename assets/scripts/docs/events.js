@@ -82,13 +82,16 @@ const onDeleteDoc = function(event) {
   event.preventDefault();
   let id = event.target.id.replace('delete-', '');
   api.deleteDoc(id)
-    .then(function() {
+    .done(function() {
       api.getAllMyDocs()
-        .then(ui.showMyDocs)
-        .catch(ui.failure);
+        .done(function() {
+          ui.updateDocSuccess();
+          onMyFiles();
+        })
+        .fail(ui.failure);
     })
-    .then(ui.deleteDocSuccess)
-    .catch(ui.failure);
+    .done(ui.deleteDocSuccess)
+    .fail(ui.failure);
 };
 
 const addHandlers = () => {
