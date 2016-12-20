@@ -3,10 +3,17 @@
 const myFilesTemplate = require('../templates/my-files.handlebars');
 const allFilesTemplate = require('../templates/all-files.handlebars');
 const uploadFileTemplate = require('../templates/upload-file.handlebars');
+const noFilesTemplate = require('../templates/no-files.handlebars');
 const msg = require('../common/user-messages.js');
 
 const showMyDocs = function(myFiles) {
-  $('#content').html(myFilesTemplate(myFiles));
+  if (myFiles.docs.length < 1) {
+    $('#content').html(noFilesTemplate());
+    msg.setUserMessage(msg.noUserDocs);
+  } else {
+    $('#content').html(myFilesTemplate(myFiles));
+  }
+
   $('#launch-page-nav').show();
 };
 
@@ -20,7 +27,13 @@ const createDocSuccess = function() {
 };
 
 const getAllDocsSuccess = function(allFiles) {
-  $('#content').html(allFilesTemplate(allFiles));
+  if (allFiles.docs.length < 1) {
+    $('#content').html(noFilesTemplate());
+    msg.setUserMessage(msg.noUserDocs);
+  } else {
+    $('#content').html(allFilesTemplate(allFiles));
+  }
+
   $('#launch-page-nav').show();
 };
 
