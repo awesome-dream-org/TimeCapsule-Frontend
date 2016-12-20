@@ -14,25 +14,8 @@ $(() => {
   $('#change-password-nav').hide();
   $('#sign-out-nav').hide();
   $('#launch-page-nav').hide();
+  $('#sidebar').toggleClass('visible');
 });
-
-// Go to manage my files
-$(".one").click(function() {
-  // $('.launch').hide();
-  $('.file-table-one').show();
-  $('.file-table-two').hide();
-  $('.description').hide();
-});
-
-// Go to view all files
-$(".two").click(function() {
-  // $('.launch').hide();
-  $('.file-table-two').show();
-  $('.file-table-one').hide();
-  $('.description').hide();
-});
-
-// NO EVENT HANDLER EVENT YET FOR CREATE
 
 $('form').on('submit', function() {
   $(this).addClass('buldge');

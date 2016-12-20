@@ -3,14 +3,34 @@
 const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields.js');
+const msg = require('../common/user-messages.js');
+
+const validEmail = (email) => {
+  if (/^.+@.+\..+$/.test(email)) {
+    return true;
+  } else {
+    msg.setUserMessage(msg.invalidEmail);
+    return false;
+  }
+};
+
+const matchingPasswords = (password1, password2) => {
+  if (password1 === password2) {
+    return true;
+  } else {
+    msg.setUserMessage(msg.mismatchedPasswords);
+    return false;
+  }
+};
 
 const onSignUp = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log("What data is signed up", data);
-  api.signUp(data)
-    .done(ui.signUpSuccess)
-    .fail(ui.failure);
+  if (validEmail(data.credentials.email) && matchingPasswords(data.credentials.password, data.credentials.password_confirmation)) {
+    api.signUp(data)
+      .done(ui.signUpSuccess)
+      .fail(ui.failure);
+  }
 };
 
 const onSignIn = function(event) {
