@@ -72,7 +72,7 @@ const onCreateDoc = function(event) {
 
 const onDownloadDoc = function(event) {
   event.preventDefault();
-  let id = event.target.id.replace('download-', '');
+  let id = event.currentTarget.id.replace('download-', '');
   api.getDoc(id)
     .then(ui.getDocSuccess)
     .catch(ui.failure);
@@ -80,7 +80,7 @@ const onDownloadDoc = function(event) {
 
 const onDeleteDoc = function(event) {
   event.preventDefault();
-  let id = event.target.id.replace('delete-', '');
+  let id = event.currentTarget.id.replace('delete-', '');
   api.deleteDoc(id)
     .done(function() {
       api.getAllMyDocs()
