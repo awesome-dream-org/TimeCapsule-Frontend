@@ -14,6 +14,7 @@ $(() => {
   $('#change-password-nav').hide();
   $('#sign-out-nav').hide();
   $('#launch-page-nav').hide();
+  $('#sidebar').toggleClass('visible');
 });
 
 // Go to manage my files
