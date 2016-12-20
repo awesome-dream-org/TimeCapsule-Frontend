@@ -3,16 +3,21 @@
 const api = require('./api');
 const ui = require('./ui');
 const catEvents = require('../categories/events.js');
-const getFormFields = require('../../../lib/get-form-fields.js');
 
 const onUpdateDoc = function(event){
   event.preventDefault();
+  let id = event.currentTarget.id.replace('update-', '');
+  let title = $('#title-' + id).val();
+  let category = $('#category-' + id).val();
 
-  let data = getFormFields(event.target);
-  console.log("What data is signed up", data);
-  api.updateDoc(data)
-    .then(ui.updateDocSuccess)
-    .catch(ui.failure);
+  if ($('#title-' + id).val()) {
+    api.updateDoc(id, title, category)
+      .then(ui.updateDocSuccess)
+      .catch(ui.failure);
+  } else {
+    ui.updateDocInvalidTitle();
+  }
+
 };
 
 const onMyFiles = function() {
