@@ -14,19 +14,47 @@ html, body {
 }
 
 // Title and description styles
-h1 {
+.header-text {
   margin: 20px;
+  padding: 20px;
   font-size: 50px;
   text-align: center;
   border-bottom: 1px solid #111;
+  animation: fade-in 2s;
 }
 
-h3 {
-  margin: 20px;
+.description {
+  opacity: 0;
+  width: 80%;
+  margin: 0 auto;
   font-size: 20px;
-  text-align: center;
+  line-height: 30px;
+  animation: fade-in 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 
+.header-title {
+  margin-top: 20px;
+  font-size: 50px;
+  float: right;
+  text-align: center;
+  width: 32%;
+};
+
+.header-user {
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+  float: right;
+  text-align: right;
+  width: 32%;
+};
+
+hr {
+  margin-top: 130px;
+  border-bottom: 1px solid #111;
+};
 
 // Sidebar and button styles
 #sidebar {
@@ -63,6 +91,10 @@ ul li a {
   width: 180px;
   padding: 10px;
 }
+
+a {
+	cursor: pointer;
+};
 
 #sidebar-btn {
   display: inline-block;
@@ -235,9 +267,6 @@ file:hover {
 
 // Hide launch page styling
 
-.launch {
-  // display: none;
-}
 // File table styling
 
 .file-table-one, .file-table-two  {
@@ -277,10 +306,26 @@ caption {
   background-color: slategrey;
 }
 
-
-@media (max-width: 400px) {
+@media (min-width: 500px) {
   .file-names {
     width: 33.33%;
     float: none;
+  }
+
+  .description {
+    margin-top: 80px;
+    width: 50%;
+    line-height: 40px;
+  }
+}
+
+@keyframes fade-in {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
