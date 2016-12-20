@@ -3,60 +3,66 @@
 const myFilesTemplate = require('../templates/my-files.handlebars');
 const allFilesTemplate = require('../templates/all-files.handlebars');
 const uploadFileTemplate = require('../templates/upload-file.handlebars');
-const noFilesTemplate = require('../templates/no-files.handlebars');
 const msg = require('../common/user-messages.js');
 
-const showMyDocs = function(myFiles) {
+const showMyDocs = function (myFiles) {
   if (myFiles.docs.length < 1) {
-    $('#content').html(noFilesTemplate());
+    $('#content').html('');
     msg.setUserMessage(msg.noUserDocs);
   } else {
+    msg.clearUserMessage();
     $('#content').html(myFilesTemplate(myFiles));
   }
 
   $('#launch-page-nav').show();
 };
 
-const showCreateDocForm = function() {
+const showCreateDocForm = function () {
   $('#content').html(uploadFileTemplate());
   $('#launch-page-nav').show();
+  msg.clearUserMessage();
 };
 
-const createDocSuccess = function(data) {
-  console.log("Doc data is ", data);
+const createDocSuccess = function () {
   msg.setUserMessage(msg.createSuccess);
+  $('#create-document-form').trigger('reset');
 };
 
-const getAllDocsSuccess = function(allFiles) {
+const createDocFailure = function () {
+  msg.setUserMessage(msg.createFailure);
+};
+
+const getAllDocsSuccess = function (allFiles) {
   if (allFiles.docs.length < 1) {
-    $('#content').html(noFilesTemplate());
-    msg.setUserMessage(msg.noUserDocs);
+    $('#content').html('');
+    msg.setUserMessage(msg.noDocs);
   } else {
+    msg.clearUserMessage();
     $('#content').html(allFilesTemplate(allFiles));
   }
 
   $('#launch-page-nav').show();
 };
 
-const getDocSuccess = function(data) {
+const getDocSuccess = function (data) {
   window.location.assign(data.doc.url);
   msg.setUserMessage(msg.downloadSuccess);
 };
 
-const updateDocSuccess = function() {
+const updateDocSuccess = function () {
   msg.setUserMessage(msg.updateSuccess);
 };
 
-const updateDocInvalidTitle = function() {
+const updateDocInvalidTitle = function () {
   msg.setUserMessage(msg.updateDocInvalidTitle);
 };
 
-const deleteDocSuccess = function() {
+const deleteDocSuccess = function () {
   msg.setUserMessage(msg.deleteSuccess);
 };
 
-const failure = function() {
-  msg.setUserMessage(msg.genericFailure);
+const failure = function () {
+  msg.setUserMessage(msg.genericError);
 };
 
 module.exports = {
@@ -69,4 +75,5 @@ module.exports = {
   deleteDocSuccess,
   failure,
   updateDocInvalidTitle,
+  createDocFailure,
 };

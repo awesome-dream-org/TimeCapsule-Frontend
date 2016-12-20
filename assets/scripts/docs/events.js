@@ -6,26 +6,26 @@ const catEvents = require('../categories/events.js');
 const catUI = require('../categories/ui.js');
 const catAPI = require('../categories/api.js');
 
-const onMyFiles = function() {
+const onMyFiles = function () {
   event.preventDefault();
   api.getAllMyDocs()
-    .done(function(docsResult) {
+    .done(function (docsResult) {
       ui.showMyDocs(docsResult);
       catAPI.getAllCats()
-        .done(function(catsResult) {
+        .done(function (catsResult) {
           catUI.updateCategorySelectMulti(docsResult.docs, catsResult.categories);
         })
-      .done(function() {
-        $('table').filterTable({
-          filterExpression: 'filterTableFindAny',
-          minRows: 0
+        .done(function () {
+          $('table').filterTable({
+            filterExpression: 'filterTableFindAny',
+            minRows: 0,
+          });
         });
-      });
     })
     .fail(ui.failure);
 };
 
-const onUpdateDoc = function(event) {
+const onUpdateDoc = function (event) {
   event.preventDefault();
   let id = event.currentTarget.id.replace('update-', '');
   let title = $('#title-' + id).val();
@@ -33,60 +33,69 @@ const onUpdateDoc = function(event) {
 
   if ($('#title-' + id).val()) {
     api.updateDoc(id, title, category)
-      .then(ui.updateDocSuccess)
-      .then(onMyFiles)
-      .catch(ui.failure);
+      .done(function () {
+        ui.updateDocSuccess();
+        onMyFiles();
+      })
+      .fail(ui.failure);
   } else {
     ui.updateDocInvalidTitle();
   }
 };
 
-const onGetAllFiles = function(event) {
+const onGetAllFiles = function (event) {
   event.preventDefault();
   api.getAllDocs()
     .then(ui.getAllDocsSuccess)
-    .then(()=>{
+    .then(() => {
       $('table').filterTable({
         filterExpression: 'filterTableFindAny',
-        minRows: 0
+        minRows: 0,
       });
     })
     .catch(ui.failure);
 };
 
-const onUploadFile = function(event) {
+const onUploadFile = function (event) {
   event.preventDefault();
   ui.showCreateDocForm();
   catEvents.onGetAllCats(event);
 };
 
-const onCreateDoc = function(event) {
+const onCreateDoc = function (event) {
   event.preventDefault();
   let data = new FormData(event.target);
-  api.createDoc(data)
-    .then(ui.createDocSuccess)
-    .catch(ui.failure);
+  if ($('#doc-title').val() && $('#select-category').val() && $('#doc-file').val()) {
+    api.createDoc(data)
+      .then(ui.createDocSuccess)
+      .catch(ui.failure);
+  } else {
+    ui.createDocFailure();
+  }
 };
 
-const onDownloadDoc = function(event) {
+const onDownloadDoc = function (event) {
   event.preventDefault();
-  let id = event.target.id.replace('download-', '');
+  let id = event.currentTarget.id.replace('download-', '');
   api.getDoc(id)
     .then(ui.getDocSuccess)
     .catch(ui.failure);
 };
 
-const onDeleteDoc = function(event) {
+const onDeleteDoc = function (event) {
   event.preventDefault();
-  let id = event.target.id.replace('delete-', '');
+  let id = event.currentTarget.id.replace('delete-', '');
   api.deleteDoc(id)
-    .then(function() {
+    .done(function () {
       api.getAllMyDocs()
-        .then(ui.showMyDocs)
-        .catch(ui.failure);
+        .done(function () {
+          ui.updateDocSuccess();
+          onMyFiles();
+        })
+        .fail(ui.failure);
     })
-    .then(ui.deleteDocSuccess)
-    .catch(ui.failure);
+    .done(ui.deleteDocSuccess)
+    .fail(ui.failure);
 };
 
 const addHandlers = () => {

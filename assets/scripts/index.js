@@ -18,11 +18,10 @@ $(() => {
   $('#sign-out-nav').hide();
   $('#launch-page-nav').hide();
   $('#sidebar').toggleClass('visible');
-  // $('#dummy-table').dataTable();
 });
 
 // Go to manage my files
-$(".one").click(function() {
+$('.one').click(function () {
   $('.launch').hide();
   $('.file-table-one').show();
   $('.file-table-two').hide();
@@ -30,38 +29,30 @@ $(".one").click(function() {
 });
 
 // Go to view all files
-$(".two").click(function() {
+$('.two').click(function () {
   $('.launch').hide();
   $('.file-table-two').show();
   $('.file-table-one').hide();
   $('.description').hide();
 });
 
-// NO EVENT HANDLER EVENT YET FOR CREATE
-
-$(signUpTemplate).on('submit', function() {
-  console.log('Works');
+$(signUpTemplate).on('submit', function () {
   $('form').addClass('buldge');
-  let self = this;
-  setTimeout(function() {
+  setTimeout(function () {
     $('form').removeClass('buldge');
   }, 250);
 });
 
-$(signInTemplate).on('submit', function() {
-  console.log('Works');
+$(signInTemplate).on('submit', function () {
   $('form').addClass('buldge');
-  let self = this;
-  setTimeout(function() {
+  setTimeout(function () {
     $('form').removeClass('buldge');
   }, 250);
 });
 
-$(changePassWordTemplate).on('submit', function() {
-  console.log('Works');
+$(changePassWordTemplate).on('submit', function () {
   $('form').addClass('buldge');
-  let self = this;
-  setTimeout(function() {
+  setTimeout(function () {
     $('form').removeClass('buldge');
   }, 250);
 });

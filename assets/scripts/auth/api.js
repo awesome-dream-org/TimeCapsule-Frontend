@@ -3,7 +3,7 @@
 const app = require('../config.js');
 const store = require('../store');
 
-const signUp = function(data) {
+const signUp = function (data) {
   return $.ajax({
     url: app.host + '/sign-up/',
     method: 'POST',
@@ -11,7 +11,7 @@ const signUp = function(data) {
   });
 };
 
-const signIn = function(data) {
+const signIn = function (data) {
   return $.ajax({
     url: app.host + '/sign-in/',
     method: 'POST',
@@ -19,7 +19,7 @@ const signIn = function(data) {
   });
 };
 
-const signOut = function() {
+const signOut = function () {
   return $.ajax({
     method: 'DELETE',
     url: app.host + '/sign-out/' + store.user._id,
@@ -29,7 +29,7 @@ const signOut = function() {
   });
 };
 
-const changePassword = function(data) {
+const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
     url: app.host + '/change-password/' + store.user._id,
