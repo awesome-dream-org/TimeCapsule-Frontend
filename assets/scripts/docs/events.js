@@ -33,9 +33,11 @@ const onUpdateDoc = function(event) {
 
   if ($('#title-' + id).val()) {
     api.updateDoc(id, title, category)
-      .then(ui.updateDocSuccess)
-      .then(onMyFiles)
-      .catch(ui.failure);
+      .done(function() {
+        ui.updateDocSuccess();
+        onMyFiles();
+      })
+      .fail(ui.failure);
   } else {
     ui.updateDocInvalidTitle();
   }
