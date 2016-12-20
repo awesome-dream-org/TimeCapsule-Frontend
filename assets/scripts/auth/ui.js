@@ -19,6 +19,10 @@ const signInSuccess = (data) => {
   msg.clearUserMessage();
 };
 
+const signInFailure = () => {
+  msg.setUserMessage(msg.invalidCredentials);
+};
+
 const signOutSuccess = () => {
   // redirect user to the title page
   $('#content').html(titleTemplate());
@@ -57,4 +61,5 @@ module.exports = {
   signOutSuccess,
   changePasswordSuccess,
   signUpSuccess,
+  signInFailure,
 };

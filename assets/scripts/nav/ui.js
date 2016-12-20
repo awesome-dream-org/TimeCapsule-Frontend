@@ -7,14 +7,17 @@ const changePasswordTemplate = require('../templates/change-password.handlebars'
 const launchTemplate = require('../templates/launch.handlebars');
 
 const showSignUpForm = function() {
+  msg.clearUserMessage();
   $('#content').html(signUpTemplate());
 };
 
 const showSignInForm = function() {
+  msg.clearUserMessage();
   $('#content').html(signInTemplate());
 };
 
 const showChangePasswordForm = function() {
+  msg.clearUserMessage();
   $('#content').html(changePasswordTemplate());
 };
 
