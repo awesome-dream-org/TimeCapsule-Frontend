@@ -40,27 +40,21 @@ $(".two").click(function() {
 // NO EVENT HANDLER EVENT YET FOR CREATE
 
 $(signUpTemplate).on('submit', function() {
-  console.log('Works');
   $('form').addClass('buldge');
-  let self = this;
   setTimeout(function() {
     $('form').removeClass('buldge');
   }, 250);
 });
 
 $(signInTemplate).on('submit', function() {
-  console.log('Works');
   $('form').addClass('buldge');
-  let self = this;
   setTimeout(function() {
     $('form').removeClass('buldge');
   }, 250);
 });
 
 $(changePassWordTemplate).on('submit', function() {
-  console.log('Works');
   $('form').addClass('buldge');
-  let self = this;
   setTimeout(function() {
     $('form').removeClass('buldge');
   }, 250);
