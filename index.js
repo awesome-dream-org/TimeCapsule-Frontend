@@ -13,3 +13,5 @@ require('./assets/styles/index.scss');
 // attach jQuery globally
 require('expose?$!jquery');
 require('expose?jQuery!jquery');
+
+require('./assets/scripts/docs/jquery.filtertable.min.js');

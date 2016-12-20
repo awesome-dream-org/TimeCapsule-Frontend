@@ -6,6 +6,25 @@ const catEvents = require('../categories/events.js');
 const catUI = require('../categories/ui.js');
 const catAPI = require('../categories/api.js');
 
+const onMyFiles = function() {
+  event.preventDefault();
+  api.getAllMyDocs()
+    .done(function(docsResult) {
+      ui.showMyDocs(docsResult);
+      catAPI.getAllCats()
+        .done(function(catsResult) {
+          catUI.updateCategorySelectMulti(docsResult.docs, catsResult.categories);
+        })
+      .done(function() {
+        $('table').filterTable({
+          filterExpression: 'filterTableFindAny',
+          minRows: 0
+        });
+      });
+    })
+    .fail(ui.failure);
+};
+
 const onUpdateDoc = function(event) {
   event.preventDefault();
   let id = event.currentTarget.id.replace('update-', '');
@@ -15,30 +34,23 @@ const onUpdateDoc = function(event) {
   if ($('#title-' + id).val()) {
     api.updateDoc(id, title, category)
       .then(ui.updateDocSuccess)
+      .then(onMyFiles)
       .catch(ui.failure);
   } else {
     ui.updateDocInvalidTitle();
   }
-
-};
-
-const onMyFiles = function() {
-  event.preventDefault();
-  api.getAllMyDocs()
-    .done(function(docsResult) {
-      ui.showMyDocs(docsResult);
-      catAPI.getAllCats()
-        .done(function(catsResult) {
-          catUI.updateCategorySelectMulti(docsResult.docs, catsResult.categories);
-        });
-    })
-    .fail(ui.failure);
 };
 
 const onGetAllFiles = function(event) {
   event.preventDefault();
   api.getAllDocs()
     .then(ui.getAllDocsSuccess)
+    .then(()=>{
+      $('table').filterTable({
+        filterExpression: 'filterTableFindAny',
+        minRows: 0
+      });
+    })
     .catch(ui.failure);
 };
 

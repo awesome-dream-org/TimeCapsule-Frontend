@@ -1,23 +1,23 @@
 <aside>{{> user-message}}</aside>
 <article>
-  <div>
-    <table class="file-table-one">
-      <tr>
-        <th>File Name</th>
-        <th>Category</th>
-        <th>Date Created</th>
-        <th>Date Modified</th>
-        <th>Download</th>
-        <th>Update</th>
-        <th>Delete</th>
-      </tr>
+  <div class="filter-table">
+    <table class="file-table-one filter-table quick">
+      <thead>
+        <tr>
+          <th>File Name</th>
+          <th>Category</th>
+          <th>Date Created</th>
+          <th>Download</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
       {{#each docs as |doc|}}
         <tr>
-          <td><input type="text" id="title-{{doc._id}}" name="doc[title]" value="{{doc.title}}"></td>
+          <td><input type="text" id="title-{{doc._id}}" name="doc[title]" value="{{doc.title}}"><span class="hidden-text">{{doc.title}}</span></td>
           <td><select id="category-{{doc._id}}" name="doc[category]" value="{{doc.category}}" class="category-list"><option value="" selected disabled>Select a Category...</option>
           </select></td>
-          <td>{{doc.createdAt}}</td>
-          <td>{{doc.updatedAt}}</td>
+          <td>{{doc.filterDate}}</td>
           <td>
             <button class="download-btn btn btn-primary btn-lg" id="download-{{doc._id}}" type="button">
               <span class="glyphicon glyphicon-download-alt"></span>

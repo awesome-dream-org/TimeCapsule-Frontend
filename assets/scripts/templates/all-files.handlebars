@@ -1,20 +1,18 @@
 <aside>{{> user-message}}</aside>
 <article>
-  <div>
+  <div class="filter-table">
     <table class="file-table-two">
       <tr>
         <th>File Name</th>
         <th>Category</th>
         <th>Date Created</th>
-        <th>Date Modified</th>
         <th>Download</th>
       </tr>
       {{#each docs as |doc|}}
         <tr>
           <td>{{doc.title}}</td>
           <td>{{doc.category}}</td>
-          <td>{{doc.createdAt}}</td>
-          <td>{{doc.updatedAt}}</td>
+          <td>{{doc.filterDate}}</td>
           <td>
             <button class="download-btn btn btn-primary btn-lg" id="download-{{doc._id}}" type="button">
               <span class="glyphicon glyphicon-download-alt"></span>
