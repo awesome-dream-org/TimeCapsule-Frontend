@@ -6,22 +6,6 @@ const catEvents = require('../categories/events.js');
 const catUI = require('../categories/ui.js');
 const catAPI = require('../categories/api.js');
 
-const onUpdateDoc = function(event) {
-  event.preventDefault();
-  let id = event.currentTarget.id.replace('update-', '');
-  let title = $('#title-' + id).val();
-  let category = $('#category-' + id).val();
-
-  if ($('#title-' + id).val()) {
-    api.updateDoc(id, title, category)
-      .then(ui.updateDocSuccess)
-      .catch(ui.failure);
-  } else {
-    ui.updateDocInvalidTitle();
-  }
-
-};
-
 const onMyFiles = function() {
   event.preventDefault();
   api.getAllMyDocs()
@@ -39,6 +23,22 @@ const onMyFiles = function() {
       });
     })
     .fail(ui.failure);
+};
+
+const onUpdateDoc = function(event) {
+  event.preventDefault();
+  let id = event.currentTarget.id.replace('update-', '');
+  let title = $('#title-' + id).val();
+  let category = $('#category-' + id).val();
+
+  if ($('#title-' + id).val()) {
+    api.updateDoc(id, title, category)
+      .then(ui.updateDocSuccess)
+      .then(onMyFiles)
+      .catch(ui.failure);
+  } else {
+    ui.updateDocInvalidTitle();
+  }
 };
 
 const onGetAllFiles = function(event) {
