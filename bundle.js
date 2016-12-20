@@ -2478,7 +2478,7 @@ webpackJsonp([0],[
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams) {
 	    var stack1;
 
-	  return "<article>\n  <div class=\"filter-table\">\n    <table class=\"file-table-two\">\n      <tr>\n        <th>File Name</th>\n        <th>Category</th>\n        <th>Date Created</th>\n        <th>Download</th>\n      </tr>\n"
+	  return "<article>\n  <div class=\"filter-table\">\n    <table class=\"file-table-two\">\n      <thead>\n        <tr>\n          <th>File Name</th>\n          <th>Category</th>\n          <th>Date Created</th>\n          <th>Download</th>\n        </tr>\n      </thead>\n"
 	    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.docs : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 1, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams})) != null ? stack1 : "")
 	    + "    </table>\n  </div>\n</article>\n";
 	},"useData":true,"useBlockParams":true});
